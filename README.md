@@ -1,4 +1,4 @@
-# ***My Little Pets Shop*****: gestión de tienda de animales, adopciones y hotel para mascotas**
+# ***My Little Pets Shop***: gestión de tienda de animales, adopciones y hotel para mascotas
 
 **Miembros del grupo L5-03** 
 
