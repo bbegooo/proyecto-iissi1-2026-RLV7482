@@ -154,50 +154,31 @@ flowchart LR
 > * **Como:** cliente  
 > * **Quiero:** ver el catálogo de productos filtrando por categoría  
 > * **Para:** encontrar lo que necesito para mi mascota  
-> * **Prueba de aceptación:**  
-  * Se muestran nombre, categoría, precio y disponibilidad de cada producto.  
-  * Al filtrar por una categoría solo aparecen productos de esa categoría.  
-  * Los productos descatalogados no aparecen en el listado.
+
 
 ##### **R.F.02. Consultar el detalle de un producto**
 
 > * **Como:** cliente  
 > * **Quiero:** consultar la descripción completa de un producto  
 > * **Para:** decidir si es adecuado para mi mascota  
-> * **Prueba de aceptación:**  
-  * Se muestran descripción, especie recomendada, precio y stock.  
-  * Si el producto no existe, se muestra un mensaje de error.
 
 ##### **R.F.03. Listar productos con bajo stock**
 
 > * **Como:** dependiente  
 > * **Quiero:** ver los productos por debajo de un umbral de stock  
 > * **Para:** reponerlos a tiempo  
-> * **Prueba de aceptación:**  
-  * Se listan los productos cuyo stock es inferior al umbral indicado.  
-  * Los productos sin stock aparecen en primer lugar.  
-  * Se tiene en cuenta la regla **R.N.05**.
 
 ##### **R.F.04. Consultar el historial de ventas de un cliente**
 
 > * **Como:** cliente  
 > * **Quiero:** ver mis compras anteriores  
 > * **Para:** repetir pedidos y llevar un control de mis gastos  
-> * **Prueba de aceptación:**  
-  * Se muestran fecha, productos, cantidades y total de cada venta.  
-  * Las ventas aparecen ordenadas de la más reciente a la más antigua.  
-  * Un cliente nunca ve las ventas de otro cliente.
 
 ##### **R.F.05. Listar las ventas de un periodo**
 
 > * **Como:** responsable  
 > * **Quiero:** ver las ventas realizadas entre dos fechas  
 > * **Para:** analizar la facturación del negocio  
-> * **Prueba de aceptación:**  
-  * Se muestran solo las ventas dentro del rango, ambos extremos incluidos.  
-  * Se muestra el total facturado del periodo.  
-  * Si la fecha final es anterior a la inicial, se rechaza la consulta.  
-  * Se tiene en cuenta la regla **R.N.11**.
 
 #### **Adopciones**
 
@@ -206,50 +187,30 @@ flowchart LR
 > * **Como:** adoptante  
 > * **Quiero:** ver los animales disponibles filtrando por especie, edad o tamaño  
 > * **Para:** elegir con cuál contactar  
-> * **Prueba de aceptación:**  
-  * Solo se muestran animales en estado "disponible".  
-  * Cada animal muestra nombre, especie, raza, edad aproximada y foto.  
-  * Los animales con adopción en trámite o ya adoptados no aparecen.  
-  * Se aplica la regla **R.N.01**.
 
 ##### **R.F.07. Consultar la ficha de un animal del refugio**
 
 > * **Como:** adoptante  
 > * **Quiero:** consultar la ficha completa de un animal  
 > * **Para:** conocer su salud y carácter antes de solicitarlo  
-> * **Prueba de aceptación:**  
-  * La ficha muestra datos básicos, esterilización, desparasitación, número de chip, carácter y observaciones.  
-  * Se muestra la fecha de la última revisión veterinaria.
 
 ##### **R.F.08. Consultar el historial sanitario de un animal**
 
 > * **Como:** veterinario  
 > * **Quiero:** ver las vacunas y revisiones de un animal  
 > * **Para:** valorar su estado de salud  
-> * **Prueba de aceptación:**  
-  * Se listan las vacunas con fecha de administración y de caducidad.  
-  * Se listan las revisiones con fecha, resultado y observaciones, de la más reciente a la más antigua.  
-  * Funciona tanto para animales del refugio como para mascotas de clientes.
 
 ##### **R.F.09. Listar las solicitudes de adopción por estado**
 
 > * **Como:** responsable  
 > * **Quiero:** ver las solicitudes de adopción filtradas por estado  
 > * **Para:** gestionar las pendientes  
-> * **Prueba de aceptación:**  
-  * Se pueden filtrar los estados "pendiente", "aprobada", "rechazada" y "formalizada".  
-  * Cada solicitud muestra solicitante, animal y fecha.  
-  * Se tiene en cuenta la regla **R.N.09**.
 
 ##### **R.F.10. Consultar los seguimientos de adopción pendientes**
 
 > * **Como:** responsable  
 > * **Quiero:** ver los seguimientos que toca realizar  
 > * **Para:** comprobar el bienestar de los animales adoptados  
-> * **Prueba de aceptación:**  
-  * Se listan los seguimientos programados cuya fecha ya ha llegado y que no se han realizado.  
-  * Cada seguimiento muestra adoptante, animal, teléfono de contacto y fecha prevista.  
-  * Se tiene en cuenta la regla **R.N.12**.
 
 #### **Hotel**
 
@@ -258,67 +219,42 @@ flowchart LR
 > * **Como:** cliente  
 > * **Quiero:** ver las habitaciones libres entre dos fechas para mi mascota  
 > * **Para:** saber si puedo reservar  
-> * **Prueba de aceptación:**  
-  * Solo se listan habitaciones de un tipo compatible con la mascota indicada.  
-  * No aparecen habitaciones con alguna reserva solapada en el rango.  
-  * La fecha de salida debe ser posterior a la de entrada.  
-  * Se aplican las reglas **R.N.03**, **R.N.06** y **R.N.14**.
 
 ##### **R.F.12. Consultar las tarifas del hotel**
 
 > * **Como:** cliente  
 > * **Quiero:** ver el precio por noche de cada tipo de habitación y de los servicios adicionales  
-> * **Para:** calcular el coste de la estancia  
-> * **Prueba de aceptación:**  
-  * Se muestra la tarifa vigente por noche de cada tipo de habitación.  
-  * Se muestra el precio de cada servicio adicional.
+> * **Para:** calcular el coste de la estancia
 
 ##### **R.F.13. Listar las reservas de un cliente**
 
 > * **Como:** cliente  
 > * **Quiero:** ver mis reservas pasadas y futuras  
 > * **Para:** llevar control de las estancias de mis mascotas  
-> * **Prueba de aceptación:**  
-  * Se muestran mascota, habitación, fechas, estado y precio total.  
-  * Las reservas aparecen ordenadas por fecha de entrada.  
-  * Un cliente nunca ve las reservas de otro cliente.
 
 ##### **R.F.14. Listar las entradas y salidas del día**
 
 > * **Como:** cuidador  
 > * **Quiero:** ver las mascotas que entran y salen hoy  
 > * **Para:** preparar las habitaciones y atender a los clientes  
-> * **Prueba de aceptación:**  
-  * Se muestran las reservas con fecha de entrada igual a hoy y las de fecha de salida igual a hoy, por separado.  
-  * Las reservas canceladas no aparecen.  
-  * Cada entrada muestra mascota, habitación y observaciones del cliente (alimentación, medicación).
 
 ##### **R.F.15. Consultar la ocupación del hotel**
 
 > * **Como:** responsable  
 > * **Quiero:** ver el porcentaje de ocupación del hotel por día en un rango de fechas  
 > * **Para:** planificar el personal y las tarifas  
-> * **Prueba de aceptación:**  
-  * Para cada día se muestran habitaciones ocupadas, libres y el porcentaje.  
-  * Las reservas canceladas no se cuentan como ocupación.
 
 ##### **R.F.16. Consultar los servicios adicionales de una estancia**
 
 > * **Como:** cuidador  
 > * **Quiero:** ver los servicios contratados para una estancia  
 > * **Para:** realizarlos y que se facturen correctamente  
-> * **Prueba de aceptación:**  
-  * Se listan los servicios con fecha, cantidad y precio.  
-  * Se muestra el coste total de los servicios de la estancia.
 
 ##### **R.F.17. Listar las incidencias de una estancia**
 
 > * **Como:** cliente  
 > * **Quiero:** ver las incidencias ocurridas durante la estancia de mi mascota  
 > * **Para:** estar informado de lo que ha sucedido  
-> * **Prueba de aceptación:**  
-  * Se listan fecha, descripción y si requirió atención veterinaria.  
-  * Un cliente solo ve incidencias de sus propias mascotas.
 
 #### **Clientes y mascotas**
 
@@ -327,21 +263,12 @@ flowchart LR
 > * **Como:** cliente  
 > * **Quiero:** ver las mascotas que tengo registradas  
 > * **Para:** elegir cuál reservar en el hotel  
-> * **Prueba de aceptación:**  
-  * Se muestran nombre, especie, raza y estado vacunal de cada mascota.  
-  * No aparecen mascotas de otros clientes.  
-  * Se tiene en cuenta la regla **R.N.13**.
 
 ##### **R.F.19. Listar las vacunas próximas a caducar**
 
 > * **Como:** veterinario  
 > * **Quiero:** ver las vacunas que caducan en los próximos 30 días  
 > * **Para:** avisar a los clientes antes de su reserva  
-> * **Prueba de aceptación:**  
-  * Se listan animal, vacuna, fecha de caducidad y cliente propietario.  
-  * Se incluyen solo mascotas con reservas futuras o animales del refugio.  
-  * Se ordena por fecha de caducidad ascendente.  
-  * Se tiene en cuenta la regla **R.N.02**.
 
 ### **4.1.1. Requisitos de información**
 
@@ -351,111 +278,73 @@ flowchart LR
 > * **Quiero:** almacenar los datos de cada cliente  
 > * **Para:** gestionar sus compras, reservas y adopciones  
 > * **Prueba de aceptación:**  
-  * Se guarda nombre, apellidos, DNI, fecha de nacimiento, teléfono, correo electrónico y dirección.  
-  * El DNI y el correo electrónico no pueden repetirse.  
   * La fecha de nacimiento es obligatoria (necesaria para **R.N.04**).
 
 ##### **R.I.02. Información del personal**
 
 > * **Como:** responsable  
 > * **Quiero:** almacenar los datos de los empleados y su rol  
-> * **Para:** saber quién realiza cada gestión  
-> * **Prueba de aceptación:**  
-  * Se guarda nombre, apellidos, DNI, teléfono, correo y rol (dependiente, cuidador, veterinario, responsable).  
-  * Cada empleado tiene exactamente un rol.
+> * **Para:** saber quién realiza cada gestión
 
 ##### **R.I.03. Información de animales**
 
 > * **Como:** cuidador  
 > * **Quiero:** almacenar los datos de cada animal  
 > * **Para:** gestionar su adopción o su estancia  
-> * **Prueba de aceptación:**  
-  * Se guarda nombre, especie, raza, sexo, fecha de nacimiento (o aproximada), tamaño, color, número de chip y fotografía.  
-  * El número de chip es único cuando existe.  
-  * Cada animal es del refugio o de un cliente, nunca de ambos (**R.N.07**).  
-  * De los animales del refugio se guarda además fecha de ingreso, carácter y estado (disponible, en trámite, adoptado).
 
 ##### **R.I.04. Información sanitaria**
 
 > * **Como:** veterinario  
 > * **Quiero:** registrar vacunas y revisiones de cada animal  
 > * **Para:** mantener su historial sanitario  
-> * **Prueba de aceptación:**  
-  * Cada vacuna guarda tipo de vacuna, fecha de administración y fecha de caducidad posterior a la administración.  
-  * Cada revisión guarda fecha, veterinario, resultado (favorable o no favorable) y observaciones.  
-  * Se registra si el animal está esterilizado y desparasitado.
 
 ##### **R.I.05. Información de productos**
 
 > * **Como:** dependiente  
 > * **Quiero:** almacenar los datos de los productos y sus categorías  
 > * **Para:** gestionar el catálogo  
-> * **Prueba de aceptación:**  
-  * Se guarda nombre, descripción, categoría, precio, stock, especie recomendada y si está descatalogado.  
-  * El precio es positivo y el stock no es negativo.
 
 ##### **R.I.06. Información de ventas**
 
 > * **Como:** dependiente  
 > * **Quiero:** almacenar cada venta con sus líneas  
 > * **Para:** conservar el histórico de compras  
-> * **Prueba de aceptación:**  
-  * Una venta guarda cliente, empleado, fecha, método de pago (efectivo o tarjeta) y total.  
-  * Cada línea guarda producto, cantidad y precio unitario aplicado.  
-  * Una venta tiene al menos una línea.
 
 ##### **R.I.07. Información de solicitudes de adopción y adopciones**
 
 > * **Como:** responsable  
 > * **Quiero:** almacenar solicitudes y adopciones formalizadas  
 > * **Para:** controlar el proceso de adopción  
-> * **Prueba de aceptación:**  
-  * Una solicitud guarda cliente, animal, fecha, estado, resultado de la entrevista y observaciones.  
-  * Una adopción formalizada guarda solicitud asociada, fecha, tasa de adopción abonada y contrato.
 
 ##### **R.I.08. Información de seguimientos**
 
 > * **Como:** responsable  
 > * **Quiero:** registrar los seguimientos de cada adopción  
 > * **Para:** comprobar el bienestar de los animales adoptados  
-> * **Prueba de aceptación:**  
-  * Cada seguimiento guarda adopción, fecha prevista, fecha de realización (si se hizo), resultado y observaciones.
 
 ##### **R.I.09. Información de habitaciones y tarifas**
 
 > * **Como:** responsable  
 > * **Quiero:** almacenar las habitaciones, sus tipos y tarifas  
 > * **Para:** ofrecer el hotel con precios actualizados  
-> * **Prueba de aceptación:**  
-  * Cada habitación guarda número y tipo.  
-  * Cada tipo guarda nombre, especies admitidas, tamaño máximo y tarifa por noche.  
-  * El número de habitación no puede repetirse.
 
 ##### **R.I.10. Información de reservas y estancias**
 
 > * **Como:** cuidador  
 > * **Quiero:** almacenar cada reserva y su estancia real  
 > * **Para:** controlar la ocupación y la facturación  
-> * **Prueba de aceptación:**  
-  * Una reserva guarda cliente, mascota, habitación, fechas de entrada y salida, estado (confirmada, cancelada, en curso, finalizada), observaciones y precio total.  
-  * Se guardan las fechas y horas reales de check-in y check-out cuando se producen.
 
 ##### **R.I.11. Información de servicios adicionales**
 
 > * **Como:** cuidador  
 > * **Quiero:** registrar los servicios adicionales de una estancia  
 > * **Para:** facturarlos  
-> * **Prueba de aceptación:**  
-  * Un servicio guarda nombre y precio.  
-  * Cada servicio contratado guarda reserva, servicio, fecha, cantidad y precio aplicado.
 
 ##### **R.I.12. Información de incidencias**
 
 > * **Como:** cuidador  
 > * **Quiero:** registrar las incidencias de una estancia  
 > * **Para:** dejar constancia de lo ocurrido  
-> * **Prueba de aceptación:**  
-  * Cada incidencia guarda reserva, fecha y hora, descripción, empleado que la registra y si requirió atención veterinaria.
 
 ### 
 
