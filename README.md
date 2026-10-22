@@ -20,12 +20,12 @@
 > 2. **Refugio y adopciones:** acoge animales procedentes de rescate o abandono y gestiona su adopción responsable.  
 > 3. **Hotel para mascotas:** alojamiento temporal de perros, gatos y pequeños animales mientras sus dueños están ausentes por cualquier circunstancia (viajes, trabajo…).
 
-### **Gráficos justificantes***
+### **Gráficos justificantes**
 Como se observa en las gráficas adjuntas sobre el impacto de los hoteles de mascotas, la separación temporal y la gestión de alojamientos generan un reto emocional y operativo muy importante. Por este motivo hemos elegido este proyecto: para dar solución a la fragmentación de datos actual mediante un sistema centralizado que automatice las reservas, el control sanitario y las adopciones, garantizando el bienestar de los animales y la eficiencia del negocio.
 
-<img src="1.png" alt="Gráfica 1" width="400">
+<img src="1.png" alt="Gráfica 1" width="500">
 
-<img src="2.png" alt="Gráfica 2" width="400">
+<img src="2.png" alt="Gráfica 2" width="500">
 
 ### **Clientes y usuarios**
 
