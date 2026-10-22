@@ -13,6 +13,8 @@
 
 **My Little pets shop** es un negocio local de una ciudad mediana que reúne tres actividades en un mismo espacio:
 
+![Logo del proyecto](https://github.com/bbegooo/proyecto-iissi1-2026-RLV7482/blob/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(1).png)
+
 > 1. **Tienda:** venta de alimentación, accesorios, juguetes, higiene y productos de salud para animales de compañía.  
 > 2. **Refugio y adopciones:** acoge animales procedentes de rescate o abandono y gestiona su adopción responsable.  
 > 3. **Hotel para mascotas:** alojamiento temporal de perros, gatos y pequeños animales mientras sus dueños están ausentes por cualquier circunstancia (viajes, trabajo…).
