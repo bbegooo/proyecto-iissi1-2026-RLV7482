@@ -188,25 +188,20 @@ flowchart LR
 > * **Quiero:** ver los animales disponibles filtrando por especie, edad o tamaño  
 > * **Para:** elegir con cuál contactar  
 
-##### **R.F.07. Consultar la ficha de un animal del refugio**
 
-> * **Como:** adoptante  
-> * **Quiero:** consultar la ficha completa de un animal  
-> * **Para:** conocer su salud y carácter antes de solicitarlo  
-
-##### **R.F.08. Consultar el historial sanitario de un animal**
+##### **R.F.07. Consultar el historial sanitario de un animal**
 
 > * **Como:** veterinario  
 > * **Quiero:** ver las vacunas y revisiones de un animal  
 > * **Para:** valorar su estado de salud  
 
-##### **R.F.09. Listar las solicitudes de adopción por estado**
+##### **R.F.08. Listar las solicitudes de adopción por estado**
 
 > * **Como:** responsable  
 > * **Quiero:** ver las solicitudes de adopción filtradas por estado  
 > * **Para:** gestionar las pendientes  
 
-##### **R.F.10. Consultar los seguimientos de adopción pendientes**
+##### **R.F.09. Consultar los seguimientos de adopción pendientes**
 
 > * **Como:** responsable  
 > * **Quiero:** ver los seguimientos que toca realizar  
@@ -214,43 +209,43 @@ flowchart LR
 
 #### **Hotel**
 
-##### **R.F.11. Consultar la disponibilidad del hotel**
+##### **R.F.10. Consultar la disponibilidad del hotel**
 
 > * **Como:** cliente  
 > * **Quiero:** ver las habitaciones libres entre dos fechas para mi mascota  
 > * **Para:** saber si puedo reservar  
 
-##### **R.F.12. Consultar las tarifas del hotel**
+##### **R.F.11. Consultar las tarifas del hotel**
 
 > * **Como:** cliente  
 > * **Quiero:** ver el precio por noche de cada tipo de habitación y de los servicios adicionales  
 > * **Para:** calcular el coste de la estancia
 
-##### **R.F.13. Listar las reservas de un cliente**
+##### **R.F.12. Listar las reservas de un cliente**
 
 > * **Como:** cliente  
 > * **Quiero:** ver mis reservas pasadas y futuras  
 > * **Para:** llevar control de las estancias de mis mascotas  
 
-##### **R.F.14. Listar las entradas y salidas del día**
+##### **R.F.13. Listar las entradas y salidas del día**
 
 > * **Como:** cuidador  
 > * **Quiero:** ver las mascotas que entran y salen hoy  
 > * **Para:** preparar las habitaciones y atender a los clientes  
 
-##### **R.F.15. Consultar la ocupación del hotel**
+##### **R.F.14. Consultar la ocupación del hotel**
 
 > * **Como:** responsable  
 > * **Quiero:** ver el porcentaje de ocupación del hotel por día en un rango de fechas  
 > * **Para:** planificar el personal y las tarifas  
 
-##### **R.F.16. Consultar los servicios adicionales de una estancia**
+##### **R.F.15. Consultar los servicios adicionales de una estancia**
 
 > * **Como:** cuidador  
 > * **Quiero:** ver los servicios contratados para una estancia  
 > * **Para:** realizarlos y que se facturen correctamente  
 
-##### **R.F.17. Listar las incidencias de una estancia**
+##### **R.F.16. Listar las incidencias de una estancia**
 
 > * **Como:** cliente  
 > * **Quiero:** ver las incidencias ocurridas durante la estancia de mi mascota  
@@ -258,13 +253,13 @@ flowchart LR
 
 #### **Clientes y mascotas**
 
-##### **R.F.18. Listar las mascotas de un cliente**
+##### **R.F.17. Listar las mascotas de un cliente**
 
 > * **Como:** cliente  
 > * **Quiero:** ver las mascotas que tengo registradas  
 > * **Para:** elegir cuál reservar en el hotel  
 
-##### **R.F.19. Listar las vacunas próximas a caducar**
+##### **R.F.18. Listar las vacunas próximas a caducar**
 
 > * **Como:** veterinario  
 > * **Quiero:** ver las vacunas que caducan en los próximos 30 días  
