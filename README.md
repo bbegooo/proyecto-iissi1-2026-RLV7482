@@ -503,14 +503,14 @@ El hotel cuenta con un número limitado de habitaciones, además una habitación
 
 ### **4.2. Mapa de historias de usuario**
 
-| Usuario | Tienda | Adopciones | Hotel |
-| :---: | :---: | :---: | :---: |
-| **Cliente** | R.F.01, R.F.02, R.F.04 | — | R.F.11, R.F.12, R.F.13, R.F.17, R.F.18 |
-| **Adoptante** | — | R.F.06, R.F.07 | — |
-| **Dependiente** | R.F.03 | — | — |
-| **Cuidador** | — | — | R.F.14, R.F.16 |
-| **Veterinario** | — | R.F.08 | R.F.19 |
-| **Responsable** | R.F.05 | R.F.09, R.F.10 | R.F.15 |
+| Tienda | Adopciones | Hotel |
+| :---: | :---: | :---: |
+| R.F.01, R.F.02, R.F.04 | — | R.F.11, R.F.12, R.F.13, R.F.17, R.F.18 |
+| — | R.F.06, R.F.07 | — |
+| R.F.03 | — | — |
+| — | — | R.F.14, R.F.16 |
+| — | R.F.08 | R.F.19 |
+| R.F.05 | R.F.09, R.F.10 | R.F.15 |
 
 ### 
 
