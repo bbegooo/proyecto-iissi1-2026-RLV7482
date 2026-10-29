@@ -498,7 +498,7 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 > * **Para:** incorporar el sistema al trabajo diario sin dificultad
 
 
-## **5\. Modelo condeptual**
+## **5\. Modelo Condeptual**
 
 #### ** Modelo conceptual de Venta**
 
@@ -515,3 +515,61 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 #### ** Modelo conceptual de Sanidad**
 
 <img src="MC4-ISSI-SANIDAD-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
+
+
+## **6\. Matriz de Trazabilidad**
+
+## Requisitos funcionales
+
+| Requisito | Descripción | Clases implicadas |
+|:--|:--|:--|
+| **RF.01** | Listar el catálogo de productos | Producto, Categoria Producto |
+| **RF.02** | Consultar el detalle de un producto | Producto, Categoria Producto |
+| **RF.03** | Listar productos con bajo stock | Producto |
+| **RF.04** | Consultar el historial de ventas de un cliente | Cliente, Producto, Venta, Línea de venta |
+| **RF.05** | Listar las ventas de un periodo | Venta, Línea de venta |
+| **RF.06** | Listar los animales en adopción | Animal, Especie |
+| **RF.07** | Consultar el historial sanitario de un animal | Animal, Vacuna, Revisión Veterinaria, Vacunación |
+| **RF.08** | Listar las solicitudes de adopción por estado | Cliente, Animal, Solicitud Adopción |
+| **RF.09** | Consultar los seguimientos de adopción pendientes | Adopción, Seguimiento Adopción |
+| **RF.10** | Consultar la disponibilidad del hotel | Animal, Especie, Habitación, Tipo Habitación, Reserva |
+| **RF.11** | Consultar las tarifas del hotel | Tipo Habitación, Servicio Adicional |
+| **RF.12** | Listar las reservas de un cliente | Cliente, Reserva |
+| **RF.13** | Listar las entradas y salidas del día | Cliente, Animal, Habitación, Reserva |
+| **RF.14** | Consultar la ocupación del hotel | Habitación, Reserva |
+| **RF.15** | Consultar los servicios adicionales de una estancia | Reserva, Servicio Adicional |
+| **RF.16** | Listar las incidencias de una estancia | Reserva, Incidencia |
+| **RF.17** | Listar las mascotas de un cliente | Cliente, Animal |
+| **RF.18** | Listar las vacunas próximas a caducar | Cliente, Animal, Vacuna, Vacunación |
+
+## Requisitos de información
+
+| Requisito | Descripción | Clases implicadas |
+|:--|:--|:--|
+| **RI.01** | Información de clientes | Cliente |
+| **RI.02** | Información del personal | Personal |
+| **RI.03** | Información de animales | Cliente, Animal, Especie |
+| **RI.04** | Información sanitaria | Personal, Animal, Vacuna, Revisión Veterinaria, Vacunación |
+| **RI.05** | Información de productos | Producto, Categoria Producto |
+| **RI.06** | Información de ventas | Cliente, Personal, Producto, Venta, Línea de venta |
+| **RI.07** | Información de solicitudes de adopción y adopciones | Cliente, Personal, Animal, Solicitud Adopción, Adopción |
+| **RI.08** | Información de seguimientos | Personal, Adopción, Seguimiento Adopción |
+| **RI.09** | Información de habitaciones y tarifas | Especie, Habitación, Tipo Habitación |
+| **RI.10** | Información de reservas y estancias | Cliente, Animal, Habitación, Reserva |
+| **RI.11** | Información de servicios adicionales | Reserva, Servicio Adicional |
+| **RI.12** | Información de incidencias | Personal, Reserva, Incidencia |
+
+## Reglas de negocio
+
+| Requisito | Descripción | Clases implicadas |
+|:--|:--|:--|
+| **RN.01** | Una adopción por animal | Animal, Solicitud Adopción, Adopción |
+| **RN.02** | Vacunas obligatorias para el hotel | Animal, Especie, Vacuna, Reserva, Vacunación |
+| **RN.03** | Sin solapamiento de reservas | Habitación, Reserva |
+| **RN.04** | Adoptante mayor de edad | Cliente, Solicitud Adopción |
+| **RN.05** | Stock no negativo | Producto, Venta, Línea de venta |
+| **RN.06** | Habitación adecuada a la mascota | Animal, Especie, Habitación, Tipo Habitación, Reserva |
+| **RN.07** | Límite de solicitudes pendientes | Cliente, Solicitud Adopción |
+| **RN.08** | Cancelación de reservas | Reserva |
+| **RN.09** | Seguimientos de adopción | Solicitud Adopción, Adopción, Seguimiento Adopción |
+| **RN.10** | Precio total de la reserva | Tipo Habitación, Reserva, Servicio Adicional |
