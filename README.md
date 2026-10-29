@@ -496,3 +496,22 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 > * **Como:** dependiente  
 > * **Quiero:** poder realizar las consultas habituales sin formación técnica  
 > * **Para:** incorporar el sistema al trabajo diario sin dificultad
+
+
+## **5\. Modelo condeptual**
+
+#### ** Modelo conceptual de Venta**
+
+<img src="MC1-ISSI-VENTA-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
+
+#### ** Modelo conceptual de Adopción**
+
+<img src="MC2-ISSI-ADOPCION-ACTUALIZADO.png" alt="Modelo conceptual 2" width="600">
+
+#### ** Modelo conceptual de Hotel**
+
+<img src="MC3-ISSI-HOTEL-ACTUALIZADO.png" alt="Modelo conceptual 3" width="600">
+
+#### ** Modelo conceptual de Sanidad**
+
+<img src="MC4-ISSI-SANIDAD-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
