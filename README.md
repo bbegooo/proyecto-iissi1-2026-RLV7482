@@ -496,9 +496,15 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 > * **Como:** dependiente  
 > * **Quiero:** poder realizar las consultas habituales sin formación técnica  
 > * **Para:** incorporar el sistema al trabajo diario sin dificultad
+## 
 
+## 
+
+## 
 
 ## **5\. Modelo Condeptual**
+
+### 5.1. Diagramas de clases UML
 
 #### ** Modelo conceptual de Venta**
 
@@ -516,6 +522,29 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 
 <img src="MC4-ISSI-SANIDAD-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
 
+### 5.2. Escenarios de prueba
+
+#### ** E01 · R.N.01 Una adopción por animal**
+> * **Situación:**  Luna es una gata ya adoptada por Ana (solicitud s1 formalizada). Luis tenía aprobada, desde antes, la solicitud s2 por la misma gata. Se intenta formalizar s2 y se crea una segunda adopción (a2) del mismo animal.
+> * **Resultado esperado:** Rechazado: Luna ya no está en el refugio y existiría más de una adopción para el mismo animal.
+<img src="EO1 -R.N.01-DIAGRAMA-OBJETOS.png" alt="E01" width="600">
+
+#### ** E02 · R.N.02 Vacunas obligatorias para el hotel**
+> * **Situación:**  Rocky es un perro. Para los perros son obligatorias la vacuna de la rabia y la de la hepatitis . La de la rabia caduca el 10/12/2026 y la de la hepatitis el 01/06/2027. Se intenta reservar del 05/12/2026 al 15/12/2026.
+> * **Resultado esperado:** Rechazado: la vacuna de la rabia caduca antes de la salida. Con salida el 10/12/2026 la reserva se acepta, porque la vacuna sigue en vigor ese mismo día. Si faltara la de la hepatitis, también se rechazaría.
+<img src="O2--_R.N.02-DIAGRAMA-OBJETOS.drawio.png" alt="E01" width="600">
+
+#### ** E03 · R.N.03 Sin solapamiento de reservas**
+> * **Situación:**   Luna (Mascota de Ana) tiene la habitación 101 confirmada del 10/11 al 15/11/2026. Se intenta reservar la misma habitación para Coco (Mascota de Luis) del 13/11 al 17/11.
+> * **Resultado esperado:** Rechazado: las noches del 13 y el 14 ya están ocupadas por otro cliente (C27). Se aceptaría una reserva con entrada el 15/11, porque ese día sale Luna. También se aceptaría la reserva del 13 al 17 si la de Luna estuviera cancelada
+<img src="E03-R.N.03-DIAGRAMA-OBJETOS-ACTUALIZADO.png" alt="E01" width="600">
+
+
+## 
+
+## 
+
+## 
 
 ## **6\. Matriz de Trazabilidad**
 
