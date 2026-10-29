@@ -576,8 +576,6 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 
 
 
-
-<div style="font-size: 50%;">
 | | Cliente | Personal | Animal | Especie | Vacuna | Revisión Veterinaria | Producto | Categoria Producto | Venta | Línea de venta | Solicitud Adopción | Adopción | Seguimiento Adopción |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | RI-01 | X | | | | | | | | | | | | |
