@@ -532,12 +532,12 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 #### ** E02 · R.N.02 Vacunas obligatorias para el hotel**
 > * **Situación:**  Rocky es un perro. Para los perros son obligatorias la vacuna de la rabia y la de la hepatitis . La de la rabia caduca el 10/12/2026 y la de la hepatitis el 01/06/2027. Se intenta reservar del 05/12/2026 al 15/12/2026.
 > * **Resultado esperado:** Rechazado: la vacuna de la rabia caduca antes de la salida. Con salida el 10/12/2026 la reserva se acepta, porque la vacuna sigue en vigor ese mismo día. Si faltara la de la hepatitis, también se rechazaría.
-<img src="O2--_R.N.02-DIAGRAMA-OBJETOS.drawio.png" alt="E01" width="600">
+<img src="O2--_R.N.02-DIAGRAMA-OBJETOS.drawio.png" alt="E02" width="600">
 
 #### ** E03 · R.N.03 Sin solapamiento de reservas**
 > * **Situación:**   Luna (Mascota de Ana) tiene la habitación 101 confirmada del 10/11 al 15/11/2026. Se intenta reservar la misma habitación para Coco (Mascota de Luis) del 13/11 al 17/11.
 > * **Resultado esperado:** Rechazado: las noches del 13 y el 14 ya están ocupadas por otro cliente (C27). Se aceptaría una reserva con entrada el 15/11, porque ese día sale Luna. También se aceptaría la reserva del 13 al 17 si la de Luna estuviera cancelada
-<img src="E03-R.N.03-DIAGRAMA-OBJETOS-ACTUALIZADO.png" alt="E01" width="600">
+<img src="E03-R.N.03-DIAGRAMA-OBJETOS-ACTUALIZADO.png" alt="E03" width="600">
 
 
 ## 
