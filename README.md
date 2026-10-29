@@ -412,7 +412,7 @@ El tipo de habitación debe admitir la especie y el tamaño de la mascota.
   * Una reserva con tipo de habitación compatible es aceptada.
 
 
-##### **R.N.09. Límite de solicitudes pendientes**
+##### **R.N.07. Límite de solicitudes pendientes**
 
 Un cliente no puede tener más de 2 solicitudes de adopción pendientes a la vez.
 
@@ -420,7 +420,7 @@ Un cliente no puede tener más de 2 solicitudes de adopción pendientes a la vez
   * La tercera solicitud pendiente de un cliente es rechazada.  
   * Si una solicitud se resuelve (aprobada o rechazada), el cliente puede presentar otra.
 
-##### **R.N.10. Cancelación de reservas**
+##### **R.N.08. Cancelación de reservas**
 
 La cancelación de una reserva es gratuita si se realiza al menos 48 horas antes de la entrada. Si se realiza con menos antelación, se cobra la primera noche.
 
@@ -429,7 +429,7 @@ La cancelación de una reserva es gratuita si se realiza al menos 48 horas antes
   * Cancelar con 24 horas de antelación deja el importe a cobrar igual al de una noche.  
   * Una reserva ya iniciada (en curso) no puede cancelarse.
 
-##### **R.N.12. Seguimientos de adopción**
+##### **R.N.09. Seguimientos de adopción**
 
 Al formalizarse una adopción se programan dos seguimientos: uno a los 30 días y otro a los 90 días de la fecha de adopción.
 
@@ -438,7 +438,7 @@ Al formalizarse una adopción se programan dos seguimientos: uno a los 30 días 
   * Una adopción formalizada tiene exactamente dos seguimientos programados.
 
 
-##### **R.N.15. Precio total de la reserva**
+##### **R.N.10. Precio total de la reserva**
 
 El precio total de una reserva es el número de noches multiplicado por la tarifa de su tipo de habitación, más el importe de los servicios adicionales contratados.
 
