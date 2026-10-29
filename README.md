@@ -573,3 +573,49 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 | **RN.08** | Cancelación de reservas | Reserva |
 | **RN.09** | Seguimientos de adopción | Solicitud Adopción, Adopción, Seguimiento Adopción |
 | **RN.10** | Precio total de la reserva | Tipo Habitación, Reserva, Servicio Adicional |
+
+
+
+| | Cliente | Personal | Animal | Especie | Vacuna | Revisión Veterinaria | Producto | Categoria Producto | Venta | Línea de venta | Solicitud Adopción | Adopción | Seguimiento Adopción |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| RI-01 | X | | | | | | | | | | | | |
+| RI-02 | | X | | | | | | | | | | | |
+| RI-03 | X | | X | X | | | | | | | | | |
+| RI-04 | | X | X | | X | X | | | | | | | |
+| RI-05 | | | | | | X | X | | | | | | |
+| RI-06 | X | X | | | | | X | | X | X | | | |
+| RI-07 | X | X | X | | | | | | | | | X | X |
+| RI-08 | | X | | | | | | | | | | X | X |
+| RI-09 | | | | X | | | | | | | | | |
+| RI-10 | X | | X | | | | | | | | | | |
+| RI-11 | | | | | | | | | | | | | |
+| RI-12 | | X | | | | | | | | | | | |
+| RN-01 | | | X | | | | | | | | | X | X |
+| RN-02 | | | X | X | X | | | | | | | | |
+| RN-03 | | | | | | | | | | | | | |
+| RN-04 | X | | | | | | | | | | | X | |
+| RN-05 | | | | | | X | | X | X | | | | |
+| RN-06 | | | X | X | | | | | | | | | |
+| RN-07 | X | | | | | | | | | | | X | |
+| RN-08 | | | | | | | | | | | | X | |
+| RN-09 | | | | | | | | | | | | X | X | X |
+| RN-10 | | | | | | | | | | | | | |
+| RF-01 | | | | | | X | X | | | | | | |
+| RF-02 | | | | | | X | X | | | | | | |
+| RF-03 | | | | | | X | | | | | | | |
+| RF-04 | X | | | | | X | | X | X | | | | |
+| RF-05 | | | | | | | | | X | X | | | |
+| RF-06 | | | X | X | | | | | | | | | |
+| RF-07 | | | X | | X | X | | | | | | | |
+| RF-08 | X | | X | | | | | | | | X | | |
+| RF-09 | | | | | | | | | | | | | X | X |
+| RF-10 | | | X | X | | | | | | | | | |
+| RF-11 | | | | | | | | | | | | | |
+| RF-12 | X | | | | | | | | | | | | |
+| RF-13 | X | | X | | | | | | | | | | |
+| RF-14 | | | | | | | | | | | | | |
+| RF-15 | | | | | | | | | | | | | |
+| RF-16 | | | | | | | | | | | | | |
+| RF-17 | X | | X | | | | | | | | | | |
+| RF-18 | X | | X | | X | | | | | | | | |
+
