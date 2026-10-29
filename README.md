@@ -411,22 +411,6 @@ El tipo de habitación debe admitir la especie y el tamaño de la mascota.
   * No se puede reservar una habitación para perros pequeños con un perro de tamaño grande.  
   * Una reserva con tipo de habitación compatible es aceptada.
 
-##### **R.N.07. Un animal es del refugio o de un cliente**
-
-Un animal pertenece al refugio o a un cliente, nunca a ambos a la vez. Al formalizarse una adopción, pasa a ser mascota del adoptante y deja de pertenecer al refugio.
-
-> * **Prueba de aceptación:**  
-  * No se puede asignar un propietario cliente a un animal que está en el refugio.  
-  * Tras formalizar una adopción, el animal aparece entre las mascotas del adoptante (**R.F.18**).
-
-##### **R.N.08. Revisión veterinaria favorable para adoptar**
-
-Un animal solo puede entregarse en adopción si está desparasitado y tiene una revisión veterinaria favorable de los últimos 30 días.
-
-> * **Prueba de aceptación:**  
-  * Se rechaza formalizar la adopción si la última revisión tiene más de 30 días.  
-  * Se rechaza si la última revisión no es favorable.  
-  * Se rechaza si el animal no está desparasitado.
 
 ##### **R.N.09. Límite de solicitudes pendientes**
 
@@ -445,14 +429,6 @@ La cancelación de una reserva es gratuita si se realiza al menos 48 horas antes
   * Cancelar con 24 horas de antelación deja el importe a cobrar igual al de una noche.  
   * Una reserva ya iniciada (en curso) no puede cancelarse.
 
-##### **R.N.11. Precios congelados**
-
-El precio unitario de una línea de venta y la tarifa de una reserva se guardan con el valor vigente en el momento de la operación. Un cambio posterior de precios no modifica operaciones pasadas.
-
-> * **Prueba de aceptación:**  
-  * Tras subir el precio de un producto, las ventas anteriores conservan su precio unitario.  
-  * Tras cambiar una tarifa, las reservas ya creadas conservan su precio.
-
 ##### **R.N.12. Seguimientos de adopción**
 
 Al formalizarse una adopción se programan dos seguimientos: uno a los 30 días y otro a los 90 días de la fecha de adopción.
@@ -461,23 +437,6 @@ Al formalizarse una adopción se programan dos seguimientos: uno a los 30 días 
   * Al formalizar una adopción el 1 de marzo, existen seguimientos previstos el 31 de marzo y el 30 de mayo.  
   * Una adopción formalizada tiene exactamente dos seguimientos programados.
 
-##### **R.N.13. Reservas solo de mascotas propias**
-
-Un cliente solo puede reservar el hotel para mascotas que le pertenecen.
-
-> * **Prueba de aceptación:**  
-  * Reservar con una mascota de otro cliente es rechazado.  
-  * Reservar con una mascota propia es aceptado.
-
-##### **R.N.14. Duración y fechas de la estancia**
-
-La fecha de salida debe ser posterior a la de entrada. La estancia mínima es de 1 noche y la máxima de 30 noches. La fecha de entrada no puede ser anterior a hoy.
-
-> * **Prueba de aceptación:**  
-  * Una reserva con salida igual o anterior a la entrada es rechazada.  
-  * Una reserva de 31 noches es rechazada.  
-  * Una reserva de 30 noches es aceptada.  
-  * Una reserva con entrada en una fecha pasada es rechazada.
 
 ##### **R.N.15. Precio total de la reserva**
 
@@ -487,15 +446,7 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
   * Una reserva de 4 noches a 20 € con un servicio de 15 € tiene un total de 95 €.  
   * Al añadir un servicio a la estancia, el total se incrementa en su importe.
 
-##### **R.N.16. Número total de habitaciones disponibles**
 
-El hotel cuenta con un número limitado de habitaciones, además una habitación solo puede alojar a una única mascota. Únicamente se permitirá el alojamiento conjunto de varias mascotas en la misma habitación si pertenecen al mismo cliente. 
-
-> * **Prueba de aceptación:**  
-  * Reservar una habitación en una fecha específica cuando están todas ocupadas es rechazado por falta de disponibilidad.
-
-
-  * Intentar asignar una mascota a una habitación que ya se encuentra ocupada por la mascota de otro cliente es rechazado 
 
 #####  
 
