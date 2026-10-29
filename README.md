@@ -575,6 +575,7 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 | **RN.10** | Precio total de la reserva | Tipo Habitación, Reserva, Servicio Adicional |
 
 
+<div style="font-size: 75%;">
 
 | | Cliente | Personal | Animal | Especie | Vacuna | Revisión Veterinaria | Producto | Categoria Producto | Venta | Línea de venta | Solicitud Adopción | Adopción | Seguimiento Adopción |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
