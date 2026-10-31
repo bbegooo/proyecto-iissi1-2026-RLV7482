@@ -559,11 +559,11 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 > * **Situación:**   Hoy, a las 00:00, se intenta cancelar tres reservas con la tarifa aplicada de 20 € por noche. La r1 entra el 25/10 (faltan 72 horas). La r2 entra el 23/10 (faltan 24 horas). La r3 ya está en curso.
 > * **Resultado esperado:** r1 se cancela con importe a cobrar de 0 €. r2 se cancela con un importe de 20 €, el de una noche. r3 se rechaza porque una reserva iniciada no puede cancelarse.
 
-> * #### ** E09 · R.N.09 Seguimientos de adopción**
+#### ** E09 · R.N.09 Seguimientos de adopción**
 > * **Situación:**   Bimba fue adoptada por Ana el 01/03/2026. Al formalizar la adopción el sistema programa los seguimientos a 30 y 90 días.
 > * **Resultado esperado:** Estado válido: hay exactamente dos seguimientos, previstos el 31/03/2026 y el 30/05/2026. Sería inválido que existiera un solo seguimiento, o uno a 60 días.
 
-> * #### ** E10 · R.N.10 Precio total de la reserva**
+#### ** E10 · R.N.10 Precio total de la reserva**
 > * **Situación:**    La reserva r1 va del 01/12 al 05/12/2026 (4 noches) a 20 € por noche. Durante la estancia se contrató un baño de 13 €.
 > * **Resultado esperado:** Estado válido con un total de 4 × 20 + 13 = 93€ . Si por ejemplo, se añade un paseo de 5 € dos veces, el total pasa a 105 €.
 
