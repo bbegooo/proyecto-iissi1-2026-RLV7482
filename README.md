@@ -562,7 +562,7 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 #### ** E08 · R.N.08 Cancelación de reservas**
 > * **Situación:**   Hoy, a las 00:00, se intenta cancelar tres reservas con la tarifa aplicada de 20 € por noche. La r1 entra el 25/10 (faltan 72 horas). La r2 entra el 23/10 (faltan 24 horas). La r3 ya está en curso.
 > * **Resultado esperado:** r1 se cancela con importe a cobrar de 0 €. r2 se cancela con un importe de 20 €, el de una noche. r3 se rechaza porque una reserva iniciada no puede cancelarse.
-<img src="DO-E8.jpg" alt="E08" width="600">
+<img src="DO-E8.jpg" alt="E08" width="400">
 
 #### ** E09 · R.N.09 Seguimientos de adopción**
 > * **Situación:**   Bimba fue adoptada por Ana el 01/03/2026. Al formalizar la adopción el sistema programa los seguimientos a 30 y 90 días.
