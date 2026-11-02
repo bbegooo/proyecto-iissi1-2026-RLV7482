@@ -13,7 +13,7 @@
 
 **My Little pets shop** es un negocio local de una ciudad mediana que reúne tres actividades en un mismo espacio:
 
-<img src="Diseño sin título (1).png" alt="Logo del proyecto" width="400">
+<img src="Logo.png" alt="Logo del proyecto" width="400">
 
 
 > 1. **Tienda:** venta de alimentación, accesorios, juguetes, higiene y productos de salud para animales de compañía.  
@@ -542,30 +542,37 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 #### ** E04 · R.N.04 Adoptante mayor de edad**
 > * **Situación:**   Marta nació el 23/10/2009, así que tiene 17 años. Pablo nació el 22/10/2008 y cumple 18 años hoy. Ambos presentan una solicitud por Pipo, un perro del refugio.
 > * **Resultado esperado:** La solicitud s1 de Marta es rechazada y la s2 de Pablo es aceptada.
+<img src="DO-E4.png" alt="E04" width="600">
  
 #### ** E05 · R.N.05 Stock no negativo**
 > * **Situación:**   El producto «Arena para gatos» tiene un stock de 5 unidades. Se intenta registrar una venta con una línea de 6 unidades.
 > * **Resultado esperado:** Rechazado: la cantidad supera el stock . Una línea de 3 unidades se acepta y deja el stock en 2. Guardar un stock negativo directamente también se rechaza.
+<img src="DO-E5.png" alt="E05" width="600">
 
 #### ** E06 · R.N.06 Habitación adecuada a la mascota**
 > * **Situación:**   Simba es un gato mediano y Rocky un perro grande. La habitación 201 es de tipo felino (gatos pequeños y medianos) y la 202 es para perros pequeños. Se intenta reservar la 201 para Rocky (r1) y la 202 para Rocky (r2).
 > * **Resultado esperado:**  r1 se rechaza por la especie y r2 por el tamaño. Reservar la 201 para Simba se acepta.
+<img src="DO-E6.drawio.png" alt="E02" width="600">
 
 #### ** E07 · R.N.07 Límite de solicitudes pendientes**
 > * **Situación:**   David tiene dos solicitudes pendientes (por Tom y por Lola) e intenta presentar una tercera por Max.
-> * **Resultado esperado:**  La tercera solicitud pendiente se rechaza . Si s1 estuviera aprobada o rechazada, David podría presentar la nueva
+> * **Resultado esperado:**  La tercera solicitud pendiente se rechaza . Si s1 estuviera aprobada o rechazada, David podría presentar la nueva.
+<img src="DO-E7.png" alt="E07" width="600">
 
 #### ** E08 · R.N.08 Cancelación de reservas**
 > * **Situación:**   Hoy, a las 00:00, se intenta cancelar tres reservas con la tarifa aplicada de 20 € por noche. La r1 entra el 25/10 (faltan 72 horas). La r2 entra el 23/10 (faltan 24 horas). La r3 ya está en curso.
 > * **Resultado esperado:** r1 se cancela con importe a cobrar de 0 €. r2 se cancela con un importe de 20 €, el de una noche. r3 se rechaza porque una reserva iniciada no puede cancelarse.
+<img src="DO-E8.png" alt="E08" width="600">
 
 #### ** E09 · R.N.09 Seguimientos de adopción**
 > * **Situación:**   Bimba fue adoptada por Ana el 01/03/2026. Al formalizar la adopción el sistema programa los seguimientos a 30 y 90 días.
 > * **Resultado esperado:** Estado válido: hay exactamente dos seguimientos, previstos el 31/03/2026 y el 30/05/2026. Sería inválido que existiera un solo seguimiento, o uno a 60 días.
+<img src="DO-E9.png" alt="E09" width="600">
 
 #### ** E10 · R.N.10 Precio total de la reserva**
 > * **Situación:**    La reserva r1 va del 01/12 al 05/12/2026 (4 noches) a 20 € por noche. Durante la estancia se contrató un baño de 13 €.
 > * **Resultado esperado:** Estado válido con un total de 4 × 20 + 13 = 93€ . Si por ejemplo, se añade un paseo de 5 € dos veces, el total pasa a 105 €.
+<img src="DO-E10.png" alt="E10" width="600">
 
 ## 
 
