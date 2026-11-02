@@ -542,7 +542,7 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 #### ** E04 · R.N.04 Adoptante mayor de edad**
 > * **Situación:**   Marta nació el 23/10/2009, así que tiene 17 años. Pablo nació el 22/10/2008 y cumple 18 años hoy. Ambos presentan una solicitud por Pipo, un perro del refugio.
 > * **Resultado esperado:** La solicitud s1 de Marta es rechazada y la s2 de Pablo es aceptada.
-<img src="DO-E4.jpg" alt="E04" width="600">
+<img src="DO-E4.jpg" alt="E04" width="400">
  
 #### ** E05 · R.N.05 Stock no negativo**
 > * **Situación:**   El producto «Arena para gatos» tiene un stock de 5 unidades. Se intenta registrar una venta con una línea de 6 unidades.
