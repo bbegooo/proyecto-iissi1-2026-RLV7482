@@ -567,7 +567,7 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 #### ** E09 · R.N.09 Seguimientos de adopción**
 > * **Situación:**   Bimba fue adoptada por Ana el 01/03/2026. Al formalizar la adopción el sistema programa los seguimientos a 30 y 90 días.
 > * **Resultado esperado:** Estado válido: hay exactamente dos seguimientos, previstos el 31/03/2026 y el 30/05/2026. Sería inválido que existiera un solo seguimiento, o uno a 60 días.
-<img src="diagramas_objetos/DO-E9.jpg" alt="E09" width="600">
+<img src="diagramas_objetos/DO-E09.jpg" alt="E09" width="600">
 
 #### ** E10 · R.N.10 Precio total de la reserva**
 > * **Situación:**    La reserva r1 va del 01/12 al 05/12/2026 (4 noches) a 20 € por noche. Durante la estancia se contrató un baño de 13 €.
