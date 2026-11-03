@@ -23,9 +23,9 @@
 ### **Gráficos justificantes**
 Como se observa en las gráficas adjuntas sobre el impacto de los hoteles de mascotas, la separación temporal y la gestión de alojamientos generan un reto emocional y operativo muy importante. Por este motivo hemos elegido este proyecto: para dar solución a la fragmentación de datos actual mediante un sistema centralizado que automatice las reservas, el control sanitario y las adopciones, garantizando el bienestar de los animales y la eficiencia del negocio.
 
-<img src="1.png" alt="Gráfica 1" width="500">
+<img src="graficas/1.png" alt="Gráfica 1" width="500">
 
-<img src="2.png" alt="Gráfica 2" width="500">
+<img src="graficas/2.png" alt="Gráfica 2" width="500">
 
 ### **Clientes y usuarios**
 
@@ -508,71 +508,71 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 
 #### ** Modelo conceptual de Venta**
 
-<img src="MC1-ISSI-VENTA-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
+<img src="modelos_conceptuales/MC1-ISSI-VENTA-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
 
 #### ** Modelo conceptual de Adopción**
 
-<img src="MC2-ISSI-ADOPCION-ACTUALIZADO.png" alt="Modelo conceptual 2" width="600">
+<img src="modelos_conceptuales/MC2-ISSI-ADOPCION-ACTUALIZADO.png" alt="Modelo conceptual 2" width="600">
 
 #### ** Modelo conceptual de Hotel**
 
-<img src="MC3-ISSI-HOTEL-ACTUALIZADO.png" alt="Modelo conceptual 3" width="600">
+<img src="modelos_conceptuales/MC3-ISSI-HOTEL-ACTUALIZADO.png" alt="Modelo conceptual 3" width="600">
 
 #### ** Modelo conceptual de Sanidad**
 
-<img src="MC4-ISSI-SANIDAD-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
+<img src="modelos_conceptuales/MC4-ISSI-SANIDAD-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
 
 ### 5.2. Escenarios de prueba
 
 #### ** E01 · R.N.01 Una adopción por animal**
 > * **Situación:**  Luna es una gata ya adoptada por Ana (solicitud s1 formalizada). Luis tenía aprobada, desde antes, la solicitud s2 por la misma gata. Se intenta formalizar s2 y se crea una segunda adopción (a2) del mismo animal.
 > * **Resultado esperado:** Rechazado: Luna ya no está en el refugio y existiría más de una adopción para el mismo animal.
-<img src="EO1-R.N.01-DIAGRAMA-OBJETOS.png" alt="E01" width="600">
+<img src="diagramas_objetos/EO1-R.N.01-DIAGRAMA-OBJETOS.png" alt="E01" width="600">
 
 #### ** E02 · R.N.02 Vacunas obligatorias para el hotel**
 > * **Situación:**  Rocky es un perro. Para los perros son obligatorias la vacuna de la rabia y la de la hepatitis . La de la rabia caduca el 10/12/2026 y la de la hepatitis el 01/06/2027. Se intenta reservar del 05/12/2026 al 15/12/2026.
 > * **Resultado esperado:** Rechazado: la vacuna de la rabia caduca antes de la salida. Con salida el 10/12/2026 la reserva se acepta, porque la vacuna sigue en vigor ese mismo día. Si faltara la de la hepatitis, también se rechazaría.
-<img src="O2 --_ R.N.02-DIAGRAMA-OBJETOS.drawio.png" alt="E02" width="600">
+<img src="diagramas_objetos/O2 --_ R.N.02-DIAGRAMA-OBJETOS.drawio.png" alt="E02" width="600">
 
 #### ** E03 · R.N.03 Sin solapamiento de reservas**
 > * **Situación:**   Luna (Mascota de Ana) tiene la habitación 101 confirmada del 10/11 al 15/11/2026. Se intenta reservar la misma habitación para Coco (Mascota de Luis) del 13/11 al 17/11.
 > * **Resultado esperado:** Rechazado: las noches del 13 y el 14 ya están ocupadas por otro cliente (C27). Se aceptaría una reserva con entrada el 15/11, porque ese día sale Luna. También se aceptaría la reserva del 13 al 17 si la de Luna estuviera cancelada
-<img src="E03-R.N.03-DIAGRAMA-OBJETOS-ACTUALIZADO.png" alt="E03" width="600">
+<img src="diagramas_objetos/E03-R.N.03-DIAGRAMA-OBJETOS-ACTUALIZADO.png" alt="E03" width="600">
 
 #### ** E04 · R.N.04 Adoptante mayor de edad**
 > * **Situación:**   Marta nació el 23/10/2009, así que tiene 17 años. Pablo nació el 22/10/2008 y cumple 18 años hoy. Ambos presentan una solicitud por Pipo, un perro del refugio.
 > * **Resultado esperado:** La solicitud s1 de Marta es rechazada y la s2 de Pablo es aceptada.
-<img src="DO-E4.jpg" alt="E04" width="400">
+<img src="diagramas_objetos/DO-E4.jpg" alt="E04" width="400">
  
 #### ** E05 · R.N.05 Stock no negativo**
 > * **Situación:**   El producto «Arena para gatos» tiene un stock de 5 unidades. Se intenta registrar una venta con una línea de 6 unidades.
 > * **Resultado esperado:** Rechazado: la cantidad supera el stock . Una línea de 3 unidades se acepta y deja el stock en 2. Guardar un stock negativo directamente también se rechaza.
-<img src="DO-E5.jpg" alt="E05" width="600">
+<img src="diagramas_objetos/DO-E5.jpg" alt="E05" width="600">
 
 #### ** E06 · R.N.06 Habitación adecuada a la mascota**
 > * **Situación:**   Simba es un gato mediano y Rocky un perro grande. La habitación 201 es de tipo felino (gatos pequeños y medianos) y la 202 es para perros pequeños. Se intenta reservar la 201 para Rocky (r1) y la 202 para Rocky (r2).
 > * **Resultado esperado:**  r1 se rechaza por la especie y r2 por el tamaño. Reservar la 201 para Simba se acepta.
-<img src="DO-E6.jpg" alt="E02" width="600">
+<img src="diagramas_objetos/DO-E6.jpg" alt="E02" width="600">
 
 #### ** E07 · R.N.07 Límite de solicitudes pendientes**
 > * **Situación:**   David tiene dos solicitudes pendientes (por Tom y por Lola) e intenta presentar una tercera por Max.
 > * **Resultado esperado:**  La tercera solicitud pendiente se rechaza . Si s1 estuviera aprobada o rechazada, David podría presentar la nueva.
-<img src="DO-E7.jpg" alt="E07" width="600">
+<img src="diagramas_objetos/DO-E7.jpg" alt="E07" width="600">
 
 #### ** E08 · R.N.08 Cancelación de reservas**
 > * **Situación:**   Hoy, a las 00:00, se intenta cancelar tres reservas con la tarifa aplicada de 20 € por noche. La r1 entra el 25/10 (faltan 72 horas). La r2 entra el 23/10 (faltan 24 horas). La r3 ya está en curso.
 > * **Resultado esperado:** r1 se cancela con importe a cobrar de 0 €. r2 se cancela con un importe de 20 €, el de una noche. r3 se rechaza porque una reserva iniciada no puede cancelarse.
-<img src="DO-E8.jpg" alt="E08" width="400">
+<img src="diagramas_objetos/DO-E8.jpg" alt="E08" width="400">
 
 #### ** E09 · R.N.09 Seguimientos de adopción**
 > * **Situación:**   Bimba fue adoptada por Ana el 01/03/2026. Al formalizar la adopción el sistema programa los seguimientos a 30 y 90 días.
 > * **Resultado esperado:** Estado válido: hay exactamente dos seguimientos, previstos el 31/03/2026 y el 30/05/2026. Sería inválido que existiera un solo seguimiento, o uno a 60 días.
-<img src="DO-E9.jpg" alt="E09" width="600">
+<img src="diagramas_objetos/DO-E9.jpg" alt="E09" width="600">
 
 #### ** E10 · R.N.10 Precio total de la reserva**
 > * **Situación:**    La reserva r1 va del 01/12 al 05/12/2026 (4 noches) a 20 € por noche. Durante la estancia se contrató un baño de 13 €.
 > * **Resultado esperado:** Estado válido con un total de 4 × 20 + 13 = 93€ . Si por ejemplo, se añade un paseo de 5 € dos veces, el total pasa a 105 €.
-<img src="DO-E10.jpg" alt="E10" width="600">
+<img src="diagramas_objetos/DO-E10.jpg" alt="E10" width="600">
 
 ## 
 
