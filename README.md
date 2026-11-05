@@ -48,7 +48,7 @@ Actualmente la gestión se realiza con hojas de cálculo sueltas, una agenda en 
 > * **Adopciones:** las fichas se pierden o quedan incompletas, y una vez entregado el animal no se hace seguimiento sistemático de su bienestar.  
 > * **Tienda:** el stock se cuenta a mano, con roturas de stock frecuentes y sin histórico de ventas.  
 > * **Precios:** las tarifas del hotel y los precios cambian y no queda constancia de lo cobrado en cada momento.  
-> * 
+ 
 
 ### **Expectativas**
 
@@ -581,6 +581,8 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 ## 
 
 ## **6\. Matriz de Trazabilidad**
+
+Realización de la matriz de trazabilidad para los requisitos funcionales, negocio e información para vincular y hacer el seguimiento de los requisitos de nuestro proyecto desde su origen hasta el cumplimiento final. 
 
 ## Requisitos funcionales
 
