@@ -172,11 +172,11 @@ flowchart LR
 > * **Quiero:** consultar la descripción completa de un producto  
 > * **Para:** decidir si es adecuado para mi mascota  
 
-##### **R.F.03. Listar productos con bajo stock**
+##### **R.F.03. Calcular el producto con menos ventas**
 
 > * **Como:** dependiente  
-> * **Quiero:** ver los productos por debajo de un umbral de stock  
-> * **Para:** reponerlos a tiempo  
+> * **Quiero:** ver los productos que menos se han vendido
+> * **Para:** sustituirlos por otros con más ventas
 
 ##### **R.F.04. Consultar el historial de ventas de un cliente**
 
@@ -192,11 +192,11 @@ flowchart LR
 
 #### **Adopciones**
 
-##### **R.F.06. Listar los animales en adopción**
+##### **R.F.06. Calcular las especies más adoptadas**
 
-> * **Como:** adoptante  
-> * **Quiero:** ver los animales disponibles filtrando por especie, edad o tamaño  
-> * **Para:** elegir con cuál contactar  
+> * **Como:** responsable
+> * **Quiero:** ver los animales con más probabilidad de ser adoptados
+> * **Para:** aceptar más animales de esas especies
 
 
 ##### **R.F.07. Consultar el historial sanitario de un animal**
@@ -205,16 +205,16 @@ flowchart LR
 > * **Quiero:** ver las vacunas y revisiones de un animal  
 > * **Para:** valorar su estado de salud  
 
-##### **R.F.08. Listar las solicitudes de adopción por estado**
+##### **R.F.08. Calcular el cliente más frecuente**
 
 > * **Como:** responsable  
-> * **Quiero:** ver las solicitudes de adopción filtradas por estado  
-> * **Para:** gestionar las pendientes  
+> * **Quiero:** tener constancia de quién ha realizado más adopciones 
+> * **Para:** futuros descuentos 
 
-##### **R.F.09. Consultar los seguimientos de adopción pendientes**
+##### **R.F.09. Calcular las especies que menos se adaptan a la adopción**
 
 > * **Como:** responsable  
-> * **Quiero:** ver los seguimientos que toca realizar  
+> * **Quiero:** observar que especies son más vulnerables al cambio
 > * **Para:** comprobar el bienestar de los animales adoptados  
 
 #### **Hotel**
@@ -231,11 +231,11 @@ flowchart LR
 > * **Quiero:** ver el precio por noche de cada tipo de habitación y de los servicios adicionales  
 > * **Para:** calcular el coste de la estancia
 
-##### **R.F.12. Listar las reservas de un cliente**
+##### **R.F.12. Calcular el cliente que más reservas ha hecho y su número**
 
-> * **Como:** cliente  
-> * **Quiero:** ver mis reservas pasadas y futuras  
-> * **Para:** llevar control de las estancias de mis mascotas  
+> * **Como:** responsable
+> * **Quiero:** saber qué cliente ha frecuentado más las instalaciones
+> * **Para:** futuros descuentos
 
 ##### **R.F.13. Listar las entradas y salidas del día**
 
@@ -243,19 +243,13 @@ flowchart LR
 > * **Quiero:** ver las mascotas que entran y salen hoy  
 > * **Para:** preparar las habitaciones y atender a los clientes  
 
-##### **R.F.14. Consultar la ocupación del hotel**
+##### **R.F.14. Calcular la ocupación total del hotel en el momento**
 
-> * **Como:** responsable  
+> * **Como:** cuidador
 > * **Quiero:** ver el porcentaje de ocupación del hotel por día en un rango de fechas  
-> * **Para:** planificar el personal y las tarifas  
+> * **Para:** saber si el número de reservas posibles 
 
-##### **R.F.15. Consultar los servicios adicionales de una estancia**
-
-> * **Como:** cuidador  
-> * **Quiero:** ver los servicios contratados para una estancia  
-> * **Para:** realizarlos y que se facturen correctamente  
-
-##### **R.F.16. Listar las incidencias de una estancia**
+##### **R.F.15. Listar las incidencias de una estancia**
 
 > * **Como:** cliente  
 > * **Quiero:** ver las incidencias ocurridas durante la estancia de mi mascota  
@@ -263,11 +257,19 @@ flowchart LR
 
 #### **Clientes y mascotas**
 
-##### **R.F.17. Listar las mascotas de un cliente**
 
-> * **Como:** cliente  
-> * **Quiero:** ver las mascotas que tengo registradas  
-> * **Para:** elegir cuál reservar en el hotel  
+##### **R.F.16. Calcular el animal con más visitas al hospital y su número**
+
+> * **Como:** veterinario  
+> * **Quiero:** saber el animal que más ha necesitado nuestros servicios 
+> * **Para:** tenerlo en cuenta para futuros problemas de salud  
+
+
+##### **R.F.17. Calcular el número de mascotas de cada cliente**
+
+> * **Como:** responsable 
+> * **Quiero:** ver las mascotas que pertenecen a cada cliente
+> * **Para:** tenerlo en cuenta en futuras adopciones
 
 ##### **R.F.18. Listar las vacunas próximas a caducar**
 
@@ -459,9 +461,9 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 | R.F.01, R.F.02, R.F.04 | — | R.F.11, R.F.12, R.F.13, R.F.17, R.F.18 |
 | — | R.F.06, R.F.07 | — |
 | R.F.03 | — | — |
-| — | — | R.F.14, R.F.16 |
+| — | — | R.F.14, R.F.15 |
 | — | R.F.08 | R.F.19 |
-| R.F.05 | R.F.09, R.F.10 | R.F.15 |
+| R.F.05 | R.F.09, R.F.10 | R.F.16 |
 
 ### 
 
@@ -580,21 +582,21 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 |:--|:--|:--|
 | **RF.01** | Listar el catálogo de productos | Producto, Categoria Producto |
 | **RF.02** | Consultar el detalle de un producto | Producto, Categoria Producto |
-| **RF.03** | Listar productos con bajo stock | Producto |
+| **RF.03** | Calcular producto con menos ventas | Producto |
 | **RF.04** | Consultar el historial de ventas de un cliente | Cliente, Producto, Venta, Línea de venta |
 | **RF.05** | Listar las ventas de un periodo | Venta, Línea de venta |
-| **RF.06** | Listar los animales en adopción | Animal, Especie |
+| **RF.06** | Calcular las especies más adoptadas | Animal, Especie |
 | **RF.07** | Consultar el historial sanitario de un animal | Animal, Vacuna, Revisión Veterinaria, Vacunación |
-| **RF.08** | Listar las solicitudes de adopción por estado | Cliente, Animal, Solicitud Adopción |
-| **RF.09** | Consultar los seguimientos de adopción pendientes | Adopción, Seguimiento Adopción |
+| **RF.08** | Calcular el cliente más frecuente | Cliente, Adopciones |
+| **RF.09** | Calcular las especies que menos se adaptan a la adopción | Adopción, Seguimiento Adopción |
 | **RF.10** | Consultar la disponibilidad del hotel | Animal, Especie, Habitación, Tipo Habitación, Reserva |
 | **RF.11** | Consultar las tarifas del hotel | Tipo Habitación, Servicio Adicional |
-| **RF.12** | Listar las reservas de un cliente | Cliente, Reserva |
+| **RF.12** | Calcular el cliente que más reservas ha hecho, y el número | Cliente, Reserva |
 | **RF.13** | Listar las entradas y salidas del día | Cliente, Animal, Habitación, Reserva |
-| **RF.14** | Consultar la ocupación del hotel | Habitación, Reserva |
-| **RF.15** | Consultar los servicios adicionales de una estancia | Reserva, Servicio Adicional |
-| **RF.16** | Listar las incidencias de una estancia | Reserva, Incidencia |
-| **RF.17** | Listar las mascotas de un cliente | Cliente, Animal |
+| **RF.14** | Calcular la ocupación total del hotel en el momento | Habitación, Reserva |
+| **RF.15** | Listar las incidencias de una estancia | Reserva, Incidencia |
+| **RF.16** | Calcular el animal con más visitas al hospital y su número | Animal, Revisión Veterinaria |
+| **RF.17** | Calcular las mascotas de cada cliente | Cliente, Animal |
 | **RF.18** | Listar las vacunas próximas a caducar | Cliente, Animal, Vacuna, Vacunación |
 
 ## Requisitos de información
@@ -656,8 +658,8 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 | RN-08 | | | | | | | | | | | | X | |
 | RN-09 | | | | | | | | | | | | X | X | X |
 | RN-10 | | | | | | | | | | | | | |
-| RF-01 | | | | | | X | X | | | | | | |
-| RF-02 | | | | | | X | X | | | | | | |
+| RF-01 | | | | | | | | X X | | | |
+| RF-02 | | | | | | | | X X | | | | | |
 | RF-03 | | | | | | X | | | | | | | |
 | RF-04 | X | | | | | X | | X | X | | | | |
 | RF-05 | | | | | | | | | X | X | | | |
