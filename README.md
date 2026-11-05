@@ -658,7 +658,7 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 | RN-08 | | | | | | | | | | | | X | |
 | RN-09 | | | | | | | | | | | | X | X | X |
 | RN-10 | | | | | | | | | | | | | |
-| RF-01 | | | | | | | | X X | | | |
+| RF-01 | | | | | | | X | X | | | |
 | RF-02 | | | | | | | | X X | | | | | |
 | RF-03 | | | | | | X | | | | | | | |
 | RF-04 | X | | | | | X | | X | X | | | | |
