@@ -681,7 +681,7 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 ### 7.1. Relaciones Obtenidas al aplicar la transformación del modelo conceptual
 Notación: PK para la clave primaria (PK,FK si además es clave ajena), (AKn) para las claves alternativas, FKn para las claves ajenas (con la relación a la que apuntan), el tipo de cada atributo y NOT NULL donde corresponde. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
 
-## Personas (jerarquía Persona, {Total, Disjunta})
+### Personas (jerarquía Persona, {Total, Disjunta})
 ```
 Cliente
 PK    clienteId: integer
@@ -701,7 +701,7 @@ PK    empleadoId: integer
       telefono: varchar(15)
       rol: enum('Dependiente','Cuidador','Veterinario','Responsable')  NOT NULL
 ```
-# Animales y sanidad
+### Animales y sanidad
 ```
 Especie
 PK    especieId: integer
