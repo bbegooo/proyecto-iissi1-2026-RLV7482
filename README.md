@@ -676,3 +676,68 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 | **RF-16** | | | X | | | X | | | | | | | | | | | | | |
 | **RF-17** | X | | X | | | | | | | | | | | | | | | | |
 | **RF-18** | X | | X | | X | | | | | | | | | X | | | | | |
+
+## **7\. Modelo Relacional en 3FN**
+### 7.1. Relaciones Obtenidas al aplicar la transformación del modelo conceptual
+Notación: PK para la clave primaria (PK,FK si además es clave ajena), (AKn) para las claves alternativas, FKn para las claves ajenas (con la relación a la que apuntan), el tipo de cada atributo y NOT NULL donde corresponde. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
+
+## Personas (jerarquía Persona, {Total, Disjunta})
+          Cliente
+PK    clienteId: integer
+(AK1) dni: varchar(9)            NOT NULL
+      nombre: varchar(50)        NOT NULL
+      apellidos: varchar(100)    NOT NULL
+      email: varchar(100)
+      telefono: varchar(15)
+      fechaNacimiento: date      NOT NULL
+
+         Empleado
+PK    empleadoId: integer
+(AK1) dni: varchar(9)            NOT NULL
+      nombre: varchar(50)        NOT NULL
+      apellidos: varchar(100)    NOT NULL
+      email: varchar(100)
+      telefono: varchar(15)
+      rol: enum('Dependiente','Cuidador','Veterinario','Responsable')  NOT NULL
+
+## Animales y sanidad
+         Especie
+PK    especieId: integer
+(AK1) nombre: varchar(50)        NOT NULL
+
+         Animal
+PK    animalId: integer
+      nombre: varchar(50)        NOT NULL
+      raza: varchar(50)
+      fechaNacimiento: date
+      tamano: enum('Pequeño','Mediano','Grande')  NOT NULL
+      sexo: enum('Macho','Hembra')                NOT NULL
+      desparasitado: boolean     NOT NULL
+      esterilizado: boolean      NOT NULL
+      fechaIngresoRefugio: date
+      estado: enum('En refugio','Adoptado','De cliente')  NOT NULL
+FK1   especieId: integer         NOT NULL   → Especie
+FK2   clienteId: integer                    → Cliente
+
+        Vacuna
+PK    vacunaId: integer
+(AK1) nombre: varchar(50)        NOT NULL
+
+    VacunaObligatoria
+PK,FK1 especieId: integer        → Especie
+PK,FK2 vacunaId: integer         → Vacuna
+
+      Vacunacion
+PK,FK1 animalId: integer         → Animal
+PK,FK2 vacunaId: integer (*)     → Vacuna
+PK     fechaAdministracion: date
+       fechaCaducidad: date      NOT NULL
+FK3    empleadoId: integer       NOT NULL   → Empleado
+
+    RevisionVeterinaria
+PK,FK1 animalId: integer         → Animal
+PK     fecha: date
+       resultado: enum('Favorable','Desfavorable')  NOT NULL
+       observaciones: varchar(500)
+FK2    empleadoId: integer       NOT NULL   → Empleado
+
