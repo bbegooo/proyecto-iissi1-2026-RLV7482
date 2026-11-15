@@ -682,7 +682,7 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 Notación: PK para la clave primaria (PK,FK si además es clave ajena), (AKn) para las claves alternativas, FKn para las claves ajenas (con la relación a la que apuntan), el tipo de cada atributo y NOT NULL donde corresponde. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
 
 ## Personas (jerarquía Persona, {Total, Disjunta})
-          Cliente
+Cliente
 PK    clienteId: integer
 (AK1) dni: varchar(9)            NOT NULL
       nombre: varchar(50)        NOT NULL
@@ -691,7 +691,7 @@ PK    clienteId: integer
       telefono: varchar(15)
       fechaNacimiento: date      NOT NULL
 
-         Empleado
+Empleado
 PK    empleadoId: integer
 (AK1) dni: varchar(9)            NOT NULL
       nombre: varchar(50)        NOT NULL
@@ -701,11 +701,11 @@ PK    empleadoId: integer
       rol: enum('Dependiente','Cuidador','Veterinario','Responsable')  NOT NULL
 
 ## Animales y sanidad
-         Especie
+Especie
 PK    especieId: integer
 (AK1) nombre: varchar(50)        NOT NULL
 
-         Animal
+Animal
 PK    animalId: integer
       nombre: varchar(50)        NOT NULL
       raza: varchar(50)
@@ -719,22 +719,22 @@ PK    animalId: integer
 FK1   especieId: integer         NOT NULL   → Especie
 FK2   clienteId: integer                    → Cliente
 
-        Vacuna
+Vacuna
 PK    vacunaId: integer
 (AK1) nombre: varchar(50)        NOT NULL
 
-    VacunaObligatoria
+VacunaObligatoria
 PK,FK1 especieId: integer        → Especie
 PK,FK2 vacunaId: integer         → Vacuna
 
-      Vacunacion
+Vacunacion
 PK,FK1 animalId: integer         → Animal
 PK,FK2 vacunaId: integer (*)     → Vacuna
 PK     fechaAdministracion: date
        fechaCaducidad: date      NOT NULL
 FK3    empleadoId: integer       NOT NULL   → Empleado
 
-    RevisionVeterinaria
+RevisionVeterinaria
 PK,FK1 animalId: integer         → Animal
 PK     fecha: date
        resultado: enum('Favorable','Desfavorable')  NOT NULL
