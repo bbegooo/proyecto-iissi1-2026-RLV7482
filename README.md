@@ -741,3 +741,15 @@ PK     fecha: date
        observaciones: varchar(500)
 FK2    empleadoId: integer       NOT NULL   → Empleado
 
+
+```
+Cliente
+PK    clienteId: integer
+...
+```
+
+```
+Empleado
+PK    empleadoId: integer
+...
+```
