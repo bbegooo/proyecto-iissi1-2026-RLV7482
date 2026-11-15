@@ -682,6 +682,7 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 Notación: PK para la clave primaria (PK,FK si además es clave ajena), (AKn) para las claves alternativas, FKn para las claves ajenas (con la relación a la que apuntan), el tipo de cada atributo y NOT NULL donde corresponde. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
 
 ## Personas (jerarquía Persona, {Total, Disjunta})
+```
 Cliente
 PK    clienteId: integer
 (AK1) dni: varchar(9)            NOT NULL
@@ -699,8 +700,9 @@ PK    empleadoId: integer
       email: varchar(100)
       telefono: varchar(15)
       rol: enum('Dependiente','Cuidador','Veterinario','Responsable')  NOT NULL
-
-## Animales y sanidad
+```
+# Animales y sanidad
+```
 Especie
 PK    especieId: integer
 (AK1) nombre: varchar(50)        NOT NULL
@@ -740,16 +742,4 @@ PK     fecha: date
        resultado: enum('Favorable','Desfavorable')  NOT NULL
        observaciones: varchar(500)
 FK2    empleadoId: integer       NOT NULL   → Empleado
-
-
-```
-Cliente
-PK    clienteId: integer
-...
-```
-
-```
-Empleado
-PK    empleadoId: integer
-...
 ```
