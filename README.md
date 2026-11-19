@@ -679,7 +679,7 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 
 ## **7\. Modelo Relacional en 3FN**
 ### 7.1. Relaciones Obtenidas al aplicar la transformación del modelo conceptual
-Notación: PK para la clave primaria (PK,FK si además es clave ajena), (AKn) para las claves alternativas, FKn para las claves ajenas (con la relación a la que apuntan), el tipo de cada atributo y NOT NULL donde corresponde. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
+Notación: PK para la clave primaria, AK para las claves alternativas, FK para las claves ajenas. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
 
 ### Usuarios (jerarquía Usuario, {Total, Disjunta})
 ```
