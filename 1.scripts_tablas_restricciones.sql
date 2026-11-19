@@ -14,9 +14,9 @@ CREATE TABLE Usuarios (
 
 CREATE TABLE Clientes (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    usuarioId INT NOT NULL,
+    clienteId INT NOT NULL,
     fechaNacimiento DATE NOT NULL,
-    FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
+    FOREIGN KEY (clienteId) REFERENCES Usuarios(id)
         ON DELETE CASCADE 
         ON UPDATE CASCADE
 );
@@ -27,9 +27,9 @@ CREATE TABLE Clientes (
 
 CREATE TABLE Empleados (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    usuarioId INT NOT NULL,
+    empleadoId INT NOT NULL,
     rol ENUM('dependiente', 'cuidador', 'veterinario', 'responsable') NOT NULL
-    FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
+    FOREIGN KEY (empleadoId) REFERENCES Usuarios(id)
         ON DELETE CASCADE 
         ON UPDATE CASCADE
 );
@@ -41,8 +41,8 @@ CREATE TABLE Ventas (
     fechaHora DATETIME NOT NULL,
     total DOUBLE NOT NULL,
     rol ENUM('efectivo', 'tarjeta') NOT NULL
-    usuarioId INT NOT NULL,
-    FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
+    ventaId INT NOT NULL,
+    FOREIGN KEY (ventaId) REFERENCES Usuarios(id)
         ON DELETE CASCADE 
         ON UPDATE CASCADE
 );
