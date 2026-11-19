@@ -681,65 +681,56 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 ### 7.1. Relaciones Obtenidas al aplicar la transformación del modelo conceptual
 Notación: PK para la clave primaria (PK,FK si además es clave ajena), (AKn) para las claves alternativas, FKn para las claves ajenas (con la relación a la que apuntan), el tipo de cada atributo y NOT NULL donde corresponde. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
 
-### Personas (jerarquía Persona, {Total, Disjunta})
+### Usuarios (jerarquía Usuario, {Total, Disjunta})
 ```
-        Cliente
-PK    clienteId: integer
-(AK1) dni: varchar(9)            NOT NULL
-      nombre: varchar(50)        NOT NULL
-      apellidos: varchar(100)    NOT NULL
-      email: varchar(100)
-      telefono: varchar(15)
-      fechaNacimiento: date      NOT NULL
+Usuarios(UsuarioId, dni, nombre, apellidos, email, telefono, fechaNacimiento)
+  PK(UsuarioId)
+  AK(dni, email)
 
-        Empleado
-PK    empleadoId: integer
-(AK1) dni: varchar(9)            NOT NULL
-      nombre: varchar(50)        NOT NULL
-      apellidos: varchar(100)    NOT NULL
-      email: varchar(100)
-      telefono: varchar(15)
-      rol: enum('Dependiente','Cuidador','Veterinario','Responsable')  NOT NULL
+Clientes(UsuarioId)
+  PK(UsuarioId)
+  FK(UsuarioId)/Usuario
+
+Empleados(UsuarioId, rol)
+  PK(UsuarioId)
+  FK(UsuarioId)/Usuario
+
 ```
-### Animales y sanidad
+### Venta
 ```
-        Especie
-PK    especieId: integer
-(AK1) nombre: varchar(50)        NOT NULL
+Ventas(VentaId, 
 
-        Animal
-PK    animalId: integer
-      nombre: varchar(50)        NOT NULL
-      raza: varchar(50)
-      fechaNacimiento: date
-      tamano: enum('Pequeño','Mediano','Grande')  NOT NULL
-      sexo: enum('Macho','Hembra')                NOT NULL
-      desparasitado: boolean     NOT NULL
-      esterilizado: boolean      NOT NULL
-      fechaIngresoRefugio: date
-      estado: enum('En refugio','Adoptado','De cliente')  NOT NULL
-FK1   especieId: integer         NOT NULL   → Especie
-FK2   clienteId: integer                    → Cliente
+```
+### Sanidad
+```
+Especies(EspecieId, nombre)
+  PK(EspecieId)
+  AK(nombre)
 
-        Vacuna
-PK    vacunaId: integer
-(AK1) nombre: varchar(50)        NOT NULL
+Vacunas(VacunaId, nombre)
+  PK(VacunaId)
+  AK(nombre)
 
-    VacunaObligatoria
-PK,FK1 especieId: integer        → Especie
-PK,FK2 vacunaId: integer         → Vacuna
+EspeciesVacunas(especieVacunaId, especieId,VacunaId)
+  PK(especieVacunaId)
+  FK(especieId)/Especies
+  FK(vacunaId)/Vacunas
+  AK(especieId, vacunaId)
 
-        Vacunacion
-PK,FK1 animalId: integer         → Animal
-PK,FK2 vacunaId: integer (*)     → Vacuna
-PK     fechaAdministracion: date
-       fechaCaducidad: date      NOT NULL
-FK3    empleadoId: integer       NOT NULL   → Empleado
+Animales(animalId, especieId, clienteId, nombre, raza, fechaNacimiento, tamano, sexo, desparasitado, esterilizado, fechaIngresoRefugio, estado)
+  PK(animalId)
+  FK(especieId)/Especies
+  FK(clienteId)/Clientes
 
-    RevisionVeterinaria
-PK,FK1 animalId: integer         → Animal
-PK     fecha: date
-       resultado: enum('Favorable','Desfavorable')  NOT NULL
-       observaciones: varchar(500)
-FK2    empleadoId: integer       NOT NULL   → Empleado
+Vacunaciones(vacunacionId, animalId, vacunaId, empleadoId, fechaAdministracion, fechaCaducidad)
+  PK(vacunacionId)
+  FK(animalId)/Animales
+  FK(vacunaId)/Vacunas
+  FK(empleadoId)/Empleados
+  AK(animalId, vacunaId, fechaAdministracion)
+
+RevisionesVeterinarias(revisionVeterinariaId, animalId, empleadoId, fecha, resultado, observaciones)
+  PK(revisionVeterinariaId)
+  FK(animalId)/Animales
+  FK(empleadoId)/Empleados
 ```
