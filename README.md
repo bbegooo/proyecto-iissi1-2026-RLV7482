@@ -528,23 +528,23 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 
 #### ** E01 · Una adopción por animal**
 > * **Situación:**  Luna es una gata ya adoptada por Ana (solicitud s1 formalizada). Luis tenía aprobada, desde antes, la solicitud s2 por la misma gata. Se intenta formalizar s2 y se crea una segunda adopción (a2) del mismo animal.
-<img src="diagramas_objetos/EO1-R.N.01-DIAGRAMA-OBJETOS.png" alt="E01" width="600">
+<img src="diagramas_objetos/EO1.drawio.png" alt="E01" width="600">
 
 #### ** E02 · Vacunas obligatorias para el hotel**
 > * **Situación:**  Rocky es un perro. Para los perros son obligatorias la vacuna de la rabia y la de la hepatitis . La de la rabia caduca el 10/12/2026 y la de la hepatitis el 01/06/2027. Se intenta reservar del 05/12/2026 al 15/12/2026.
-<img src="diagramas_objetos/O2 --_ R.N.02-DIAGRAMA-OBJETOS.drawio.png" alt="E02" width="600">
+<img src="diagramas_objetos/EO2.drawio.png" alt="E02" width="600">
 
 #### ** E03 · Sin solapamiento de reservas**
 > * **Situación:**   Luna (Mascota de Ana) tiene la habitación 101 confirmada del 10/11 al 15/11/2026. Se intenta reservar la misma habitación para Coco (Mascota de Luis) del 13/11 al 17/11.
-<img src="diagramas_objetos/E03-R.N.03-DIAGRAMA-OBJETOS-ACTUALIZADO.png" alt="E03" width="600">
+<img src="diagramas_objetos/EO3.drawio.png" alt="E03" width="600">
 
 #### ** E04 · Adoptante mayor de edad**
 > * **Situación:**   Marta nació el 23/10/2009, así que tiene 17 años. Pablo nació el 22/10/2008 y cumple 18 años hoy. Ambos presentan una solicitud por Pipo, un perro del refugio.
-<img src="diagramas_objetos/DO-E4.jpg" alt="E04" width="400">
+<img src="diagramas_objetos/EO4.drawio.png" alt="E04" width="400">
  
 #### ** E05 · Stock no negativo**
 > * **Situación:**   El producto «Arena para gatos» tiene un stock de 5 unidades. Se intenta registrar una venta con una línea de 6 unidades.
-<img src="diagramas_objetos/DO-E5.jpg" alt="E05" width="600">
+<img src="diagramas_objetos/EO5.drawio.png" alt="E05" width="600">
 
 #### ** E06 · Habitación adecuada a la mascota**
 > * **Situación:**   Simba es un gato mediano y Rocky un perro grande. La habitación 201 es de tipo felino (gatos pequeños y medianos) y la 202 es para perros pequeños. Se intenta reservar la 201 para Rocky (r1) y la 202 para Rocky (r2).
