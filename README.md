@@ -676,3 +676,61 @@ Realización de la matriz de trazabilidad para los requisitos funcionales, negoc
 | **RF-16** | | | X | | | X | | | | | | | | | | | | | |
 | **RF-17** | X | | X | | | | | | | | | | | | | | | | |
 | **RF-18** | X | | X | | X | | | | | | | | | X | | | | | |
+
+## **7\. Modelo Relacional en 3FN**
+### 7.1. Relaciones Obtenidas al aplicar la transformación del modelo conceptual
+Notación: PK para la clave primaria, AK para las claves alternativas, FK para las claves ajenas. Las claves ajenas tienen el mismo nombre que la clave primaria a la que apuntan
+
+### Usuarios (jerarquía Usuario, {Total, Disjunta})
+```
+Usuarios(UsuarioId, dni, nombre, apellidos, email, telefono, fechaNacimiento)
+  PK(UsuarioId)
+  AK(dni, email)
+
+Clientes(UsuarioId)
+  PK(UsuarioId)
+  FK(UsuarioId)/Usuario
+
+Empleados(UsuarioId, rol)
+  PK(UsuarioId)
+  FK(UsuarioId)/Usuario
+
+```
+### Venta
+```
+Ventas(VentaId, 
+
+```
+### Sanidad
+```
+Especies(EspecieId, nombre)
+  PK(EspecieId)
+  AK(nombre)
+
+Vacunas(VacunaId, nombre)
+  PK(VacunaId)
+  AK(nombre)
+
+EspeciesVacunas(especieVacunaId, especieId,VacunaId)
+  PK(especieVacunaId)
+  FK(especieId)/Especies
+  FK(vacunaId)/Vacunas
+  AK(especieId, vacunaId)
+
+Animales(animalId, especieId, clienteId, nombre, raza, fechaNacimiento, tamano, sexo, desparasitado, esterilizado, fechaIngresoRefugio, estado)
+  PK(animalId)
+  FK(especieId)/Especies
+  FK(clienteId)/Clientes
+
+Vacunaciones(vacunacionId, animalId, vacunaId, empleadoId, fechaAdministracion, fechaCaducidad)
+  PK(vacunacionId)
+  FK(animalId)/Animales
+  FK(vacunaId)/Vacunas
+  FK(empleadoId)/Empleados
+  AK(animalId, vacunaId, fechaAdministracion)
+
+RevisionesVeterinarias(revisionVeterinariaId, animalId, empleadoId, fecha, resultado, observaciones)
+  PK(revisionVeterinariaId)
+  FK(animalId)/Animales
+  FK(empleadoId)/Empleados
+```
