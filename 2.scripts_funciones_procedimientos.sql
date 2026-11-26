@@ -31,6 +31,22 @@ CREATE OR REPLACE PROCEDURE pInsertarCliente (
 BEGIN
 INSERT INTO clientes (id, fechaNacimiento, usuarioId) VALUES (i, f, u);
 END//
+
+
+--- TRIGGERS
+
+DELIMITER //
+-- Comprueba que la fecha de nacimiento del cliente no puede ser null
+CREATE OR REPLACE TRIGGER
+tFechaNacCLienteNotNull
+BEFORE UPDATE ON clientes FOR EACH ROW
+BEGIN
+IF (new.fechaNacimiento IS NULL) THEN
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =
+'La fecha de nacimiento no puede estar vacía';
+END IF;
+END //
+DELIMITER ;
 DELIMITER ;
 
 --- CALL pInsertarCliente(NULL, '2026-11-12', 1);
