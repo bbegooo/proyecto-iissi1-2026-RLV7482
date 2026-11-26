@@ -510,19 +510,19 @@ El precio total de una reserva es el número de noches multiplicado por la tarif
 
 #### ** Modelo conceptual de Venta**
 
-<img src="modelos_conceptuales/MC1-ISSI-VENTA-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
+<img src="modelos_conceptuales/MC1.jpeg" alt="Modelo conceptual 1" width="600">
 
 #### ** Modelo conceptual de Adopción**
 
-<img src="modelos_conceptuales/MC2-ISSI-ADOPCION-ACTUALIZADO.png" alt="Modelo conceptual 2" width="600">
+<img src="modelos_conceptuales/MC2.jpeg" alt="Modelo conceptual 2" width="600">
 
 #### ** Modelo conceptual de Hotel**
 
-<img src="modelos_conceptuales/MC3-ISSI-HOTEL-ACTUALIZADO.png" alt="Modelo conceptual 3" width="600">
+<img src="modelos_conceptuales/MC3.jpeg" alt="Modelo conceptual 3" width="600">
 
 #### ** Modelo conceptual de Sanidad**
 
-<img src="modelos_conceptuales/MC4-ISSI-SANIDAD-ACTUALIZADO.png" alt="Modelo conceptual 1" width="600">
+<img src="modelos_conceptuales/MC4.jpeg" alt="Modelo conceptual 1" width="600">
 
 ### 5.2. Escenarios de prueba
 
