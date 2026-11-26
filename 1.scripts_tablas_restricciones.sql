@@ -47,14 +47,12 @@ CREATE TABLE LineaVenta (
 	productoId INT NOT NULL, # Adición con actualizacion de MC
     FOREIGN KEY (ventaId) REFERENCES ventas(id)
         ON DELETE CASCADE 
-        ON UPDATE CASCADE
-	# Actualizacion con MC:
-	FOREIGN KEY (productoId) REFERENCES Productos(id)
-		ON DELETE RESTRICT
-		ON UPDATE CASCADE,
+        ON UPDATE CASCADE,
 	CHECK (cantidad > 0),
 	CHECK (precio >= 0)
 );
+
+
 
 CREATE TABLE Productos (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -65,7 +63,7 @@ CREATE TABLE Productos (
     lineaId INT NOT NULL, # Tal vez esto deveria de ser categoriaId en vez de lineaId
     FOREIGN KEY (lineaId) REFERENCES lineaVenta(id)
         ON DELETE CASCADE 
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE,
 	CHECK (precio >= 0), # Actualización
 	CHECK (stock >= 0) # Actualización
 );
@@ -78,6 +76,34 @@ CREATE TABLE CategoriaProductos (
         ON DELETE CASCADE 
         ON UPDATE CASCADE
 );
+
+
+CREATE TABLE Especies (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE Animales (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(255) NOT NULL,
+	raza VARCHAR(255) NULL,
+	fechaNacimiento DATE NULL,
+	tamaño ENUM('pequeño', 'mediano', 'grande') NOT NULL,
+	sexo ENUM('macho','hembra') NOT NULL,
+	desparasitado BOOLEAN NOT NULL DEFAULT FALSE,
+	esterilizado BOOLEAN NOT NULL DEFAULT FALSE,
+	fechaIngresoRefugio DATE NULL,
+	estadoAnimal ENUM('en_refugio', 'adoptado', 'de_cliente') NOT NULL,
+	especieId INT NOT NULL,
+	clienteId INT NULL, 
+	FOREIGN KEY (especieId) REFERENCES Especies(id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	FOREIGN KEY (clienteId) REFERENCES Clientes(id)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
+);
+
 
 CREATE TABLE SolicitudAdopcion (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -146,6 +172,25 @@ CREATE TABLE Animales (
 		ON UPDATE CASCADE
 );
 
+CREATE TABLE SeguimientoAdopcion (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    diasDesdeAdopcion INT NOT NULL,
+    fechaPrevista DATE NOT NULL,
+    fechaRealizacion DATE NOT NULL,
+    resultado VARCHAR(255) NOT NULL,
+    observaciones VARCHAR(255),
+    adopcionId INT NOT NULL,
+    empleadoId INT NULL,
+    FOREIGN KEY (adopcionId) REFERENCES Adopcion(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (empleadoId) REFERENCES empleados(id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+
+
 CREATE TABLE Vacunas (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(255) UNIQUE NOT NULL
@@ -185,7 +230,7 @@ CREATE TABLE Vacunaciones (
 CREATE TABLE RevisionesVeterinarias (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	fecha DATE NOT NULL,
-	resultadoRevision ENUM(‘favorable’, ‘desfavorable’) NOT NULL,
+	resultadoRevision ENUM('favorable', 'desfavorable') NOT NULL,
 	observaciones VARCHAR(255) NULL,
 	animalId INT NOT NULL,
 	empleadoId INT NOT NULL,
@@ -208,7 +253,7 @@ CREATE TABLE TipoHabitacionEspecie (
 	tipoHabitacionId INT NOT NULL,
 	especieId INT NOT NULL,
 	PRIMARY KEY (tipoHabitacionId, especieId),
-	FOREIGN KEY (tipoHabitacionId) REFERENCES TiposHabitacion(id)
+	FOREIGN KEY (tipoHabitacionId) REFERENCES TipoHabitacion(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY (especieId) REFERENCES Especies(id)
@@ -216,11 +261,12 @@ CREATE TABLE TipoHabitacionEspecie (
 		ON UPDATE CASCADE
 );
 
+
 CREATE TABLE TipoHabitacionTamaño (
 	tipoHabitacionId INT NOT NULL,
-	tamaño ENUM(‘pequeño’, ‘mediano’, ‘grande’) NOT NULL,
+	tamaño ENUM('pequeño', 'mediano', 'grande') NOT NULL,
 	PRIMARY KEY (tipoHabitacionId, tamaño),
-	FOREIGN KEY (tiposHabitacionId) REFERENCES TipoHabitacion(id)
+	FOREIGN KEY (tipoHabitacionId) REFERENCES TipoHabitacion(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
@@ -253,7 +299,7 @@ CREATE TABLE Reservas (
     FOREIGN KEY (animalId) REFERENCES Animales(id)
         ON DELETE RESTRICT
         ON UPDATE CASCADE,
-    FOREIGN KEY (tipoHabitacionId) REFERENCES TiposHabitacion(id)
+    FOREIGN KEY (tipoHabitacionId) REFERENCES TipoHabitacion(id)
         ON DELETE RESTRICT
         ON UPDATE CASCADE,
     FOREIGN KEY (habitacionId) REFERENCES Habitaciones(id)
@@ -291,5 +337,6 @@ CREATE TABLE Incidencias (
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 );
+
 
 
