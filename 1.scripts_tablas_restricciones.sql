@@ -3,8 +3,8 @@ CREATE TABLE Usuarios (
     nombre VARCHAR(255) UNIQUE NOT NULL,
     apellidos VARCHAR(255) UNIQUE NOT NULL,
     dni VARCHAR(255) UNIQUE NOT NULL,
-	 telefono VARCHAR(255) UNIQUE NOT NULL,
-	 email VARCHAR(255) UNIQUE NOT NULL  
+	telefono VARCHAR(255) UNIQUE NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL  
 );
 
 
@@ -20,6 +20,7 @@ CREATE TABLE Empleados (
 
 CREATE TABLE Clientes (
     id INT PRIMARY KEY AUTO_INCREMENT,
+	fechanacimiento DATE NOT NULL, #Cambio con nuevo MC
     usuarioId INT NOT NULL,
     FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
         ON DELETE CASCADE 
@@ -43,9 +44,16 @@ CREATE TABLE LineaVenta (
     cantidad INT NOT NULL, 
     precio DOUBLE NOT NULL,
     ventaId INT NOT NULL,
+	productoId INT NOT NULL, # Adición con actualizacion de MC
     FOREIGN KEY (ventaId) REFERENCES ventas(id)
         ON DELETE CASCADE 
         ON UPDATE CASCADE
+	# Actualizacion con MC:
+	FOREIGN KEY (productoId) REFERENCES Productos(id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	CHECK (cantidad > 0),
+	CHECK (precio >= 0)
 );
 
 CREATE TABLE Productos (
@@ -54,10 +62,12 @@ CREATE TABLE Productos (
     descripcion VARCHAR(255) NOT NULL,
     precio DOUBLE NOT NULL, 
     stock INT NOT NULL,
-    lineaId INT NOT NULL, 
+    lineaId INT NOT NULL, # Tal vez esto deveria de ser categoriaId en vez de lineaId
     FOREIGN KEY (lineaId) REFERENCES lineaVenta(id)
         ON DELETE CASCADE 
         ON UPDATE CASCADE
+	CHECK (precio >= 0), # Actualización
+	CHECK (stock >= 0) # Actualización
 );
 
 CREATE TABLE CategoriaProductos (
@@ -73,10 +83,14 @@ CREATE TABLE SolicitudAdopcion (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fecha DATE NOT NULL,
     estado ENUM('pendiente', 'aprobada', 'rechazada') NOT NULL DEFAULT 'pendiente',
+	animalId INT NOT NULL,
     usuarioId INT NOT NULL, 
     FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
         ON DELETE CASCADE 
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE,
+	FOREIGN KEY (animalId) REFERENCES Animales(id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
 );
 
 CREATE TABLE Adopcion (
@@ -85,7 +99,7 @@ CREATE TABLE Adopcion (
     numero VARCHAR(255) NOT NULL,
     solicitudId INT NOT NULL, 
     FOREIGN KEY (solicitudId) REFERENCES solicitudAdopcion(id)
-        ON DELETE CASCADE 
+        ON DELETE RESTRICT 
         ON UPDATE CASCADE
 );
 
@@ -97,9 +111,13 @@ CREATE TABLE SeguimientoAdopcion (
     resultado VARCHAR(255) NOT NULL,
     observaciones VARCHAR(255),
     adopcionId INT NOT NULL, 
+	empleadoId INT NOT NULL,
     FOREIGN KEY (adopcionId) REFERENCES Adopcion(id)
         ON DELETE CASCADE 
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE,
+	FOREIGN KEY (empleadoId) REFERENCES Empleado(id)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
 );
 
 CREATE TABLE Especies (
@@ -110,22 +128,22 @@ CREATE TABLE Especies (
 CREATE TABLE Animales (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(255) NOT NULL,
-raza VARCHAR(255) NULL,
-fechaNacimiento DATE NULL,
-tamaño ENUM(‘pequeño’, ‘mediano’, ‘grande’) NOT NULL,
-sexo ENUM(‘macho’, ‘hembra’) NOT NULL,
-desparasitado BOOLEAN NOT NULL DEFAULT FALSE,
-esterilizado BOOLEAN NOT NULL DEFAULT FALSE,
-fechaIngresoRefugio DATE NULL,
-estadoAnimal ENUM(‘en_refugio’, ‘adoptado’, ‘de_cliente’) NOT NULL,
-especieId INT NOT NULL,
-clienteId INT NULL, 
-FOREIGN KEY (especieId) REFERENCES Especies(id)
-	ON DELETE RESTRICT
-	ON UPDATE CASCADE,
-FOREIGN KEY (clienteId) REFERENCES Clientes(id)
-	ON DELETE SET NULL
-	ON UPDATE CASCADE
+	raza VARCHAR(255) NULL,
+	fechaNacimiento DATE NULL,
+	tamaño ENUM(‘pequeño’, ‘mediano’, ‘grande’) NOT NULL,
+	sexo ENUM(‘macho’, ‘hembra’) NOT NULL,
+	desparasitado BOOLEAN NOT NULL DEFAULT FALSE,
+	esterilizado BOOLEAN NOT NULL DEFAULT FALSE,
+	fechaIngresoRefugio DATE NULL,
+	estadoAnimal ENUM(‘en_refugio’, ‘adoptado’, ‘de_cliente’) NOT NULL,
+	especieId INT NOT NULL,
+	clienteId INT NULL, 
+	FOREIGN KEY (especieId) REFERENCES Especies(id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	FOREIGN KEY (clienteId) REFERENCES Clientes(id)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
 );
 
 CREATE TABLE Vacunas (
