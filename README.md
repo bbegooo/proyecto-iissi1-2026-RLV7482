@@ -689,16 +689,45 @@ Usuarios(UsuarioId, dni, nombre, apellidos, email, telefono, fechaNacimiento)
 
 Clientes(UsuarioId)
   PK(UsuarioId)
-  FK(UsuarioId)/Usuario
+  FK(UsuarioId)/Usuarios
 
 Empleados(UsuarioId, rol)
   PK(UsuarioId)
-  FK(UsuarioId)/Usuario
+  FK(UsuarioId)/Usuarios
 
 ```
 ### Venta
 ```
 Ventas(VentaId, 
+
+```
+### Adopcion
+```
+Animales(animalId, solicitudAdopcionId, nombre, raza, fechaNacimiento, tamaño, sexo, desparasitado, esterilizado, fechaIngresoRefugio, estado)
+  PK(animalId)
+  FK(solicitudAdopcionId)/SolicitudesAdopcion
+
+SolicitudesAdopcion(solicitudAdopcionId, clienteId, animalId, empleadoId, fecha, estado, observaciones)
+  PK(solicitudAdopcionId)
+  FK(clienteId)/Clientes
+  FK(animalId)/Animales
+  FK(empleadoId)/Empleados
+
+Adopciones(adopcionId, solicitudAdopcionId, fechaAdopcion, numeroContrato)
+  PK(adopcionId)
+  FK(solicitudAdopcionId)/SolicitudesAdopcion
+  AK(solicitudAdopcionId, numeroContrato)
+
+SeguimientosAdopcion(seguimientoAdopcionId, adopcionId, empleadoId, diasDesdeAdopcion, fechaPrevista, fechaRealizacion, resultado, observaciones)
+  PK(seguimientoAdopcionId)
+  FK(adopcionId)/Adopciones
+  FK(empleadoId)/Empleados
+  AK(adopcionId, diasDesdeAdopcion)
+
+```
+### Hotel
+```
+ 
 
 ```
 ### Sanidad
@@ -717,7 +746,7 @@ EspeciesVacunas(especieVacunaId, especieId,VacunaId)
   FK(vacunaId)/Vacunas
   AK(especieId, vacunaId)
 
-Animales(animalId, especieId, clienteId, nombre, raza, fechaNacimiento, tamano, sexo, desparasitado, esterilizado, fechaIngresoRefugio, estado)
+Animales(animalId, especieId, clienteId, nombre, raza, fechaNacimiento, tamaño, sexo, desparasitado, esterilizado, fechaIngresoRefugio, estado)
   PK(animalId)
   FK(especieId)/Especies
   FK(clienteId)/Clientes
@@ -734,3 +763,11 @@ RevisionesVeterinarias(revisionVeterinariaId, animalId, empleadoId, fecha, resul
   FK(animalId)/Animales
   FK(empleadoId)/Empleados
 ```
+### 7.2. Justificación de la estrategia de transformación de jerarquías
+
+La estrategia elegida es una relación para cada clase de la jerarquía. Se crea una relación Usuarios con los atributos comunes y una relación para cada subclase (Clientes y Empleados). La generalización es {Completa, Disjunta}: 
+
+-Completa: todo usuario es cliente o empleado, porque Usuario es abstracta.
+-Disjunta: un usuario no puede ser a la vez cliente y empleado.
+
+Esta estrategia es la que mejor respeta la estructura del modelo conceptual sin generar problemas de datos. Al guardar los atributos comunes (dni, nombre, apellidos, email, telefono y fechaNacimiento) una sola vez en Usuarios, no hay información repetida y la unicidad de dni y email se garantiza para todo el sistema, sea el usuario cliente o empleado. Además, como las asociaciones del Modelo Conceptual apuntan siempre a Cliente (compras, reservas, solicitudes de adopción, propiedad de animales) o a Empleado (ventas, vacunaciones, revisiones, incidencias, gestión de adopciones), disponer de una relación propia para cada subclase permite que sea la propia clave ajena la que asegure que clienteId referencia a un cliente y empleadoId a un empleado, sin necesidad de triggers. También evita valores nulos: rol solo existe en Empleados, donde es obligatorio, y fechaNacimiento es obligatoria en Usuarios (RI.01). Por último, esta estrategia mantiene una correspondencia directa entre cada clase del modelo conceptual y su relación, lo que facilita añadir nuevas subclases en el futuro sin modificar las existentes
