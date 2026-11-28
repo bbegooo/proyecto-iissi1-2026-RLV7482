@@ -683,22 +683,43 @@ Notación: PK para la clave primaria, AK para las claves alternativas, FK para l
 
 ### Usuarios (jerarquía Usuario, {Total, Disjunta})
 ```
-Usuarios(UsuarioId, dni, nombre, apellidos, email, telefono, fechaNacimiento)
-  PK(UsuarioId)
+Usuarios(usuarioId, dni, nombre, apellidos, email, telefono, fechaNacimiento)
+  PK(usuarioId)
   AK(dni, email)
 
-Clientes(UsuarioId)
-  PK(UsuarioId)
-  FK(UsuarioId)/Usuarios
+Clientes(usuarioId)
+  PK(usuarioId)
+  FK(usuarioId)/Usuarios
 
-Empleados(UsuarioId, rol)
-  PK(UsuarioId)
-  FK(UsuarioId)/Usuarios
+Empleados(usuarioId, rol)
+  PK(usuarioId)
+  FK(usuarioId)/Usuarios
 
 ```
 ### Venta
 ```
-Ventas(VentaId, 
+Ventas(ventaId, usuarioId, fechaHora, total, métodoPago)
+ PK(ventaId)
+ AK(ventaId)
+ FK(usuarioId)/Clientes
+ FK(usuarioId)/Empleados
+
+LineasVentas(lineaVentaId,ventaId, productoId, cantidad, precio)
+ PK(lineaVentaId)
+ AK(lineaVentaId)
+ FK(ventaId)/Ventas
+ FK(productoId)/Productos
+
+Productos(productoId, categoriaProductoId,nombre, descripcion, precio, stock)
+ PK(productoId)
+ AK(productoId)
+ FK(categoriaProductoId)/CategoriasProductos
+
+CategoriasProductos(categoriaProductoId, nombre)
+ PK(categoriaProductoId)
+ AK(nombre)
+ 
+
 
 ```
 ### Adopcion
